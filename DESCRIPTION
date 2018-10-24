@@ -1,0 +1,19 @@
+Package: shinipsum
+Title: Lorem-Ipsum-like Helpers for fast Shiny Prototyping
+Version: 0.0.0.9000
+Authors@R: person('Colin', 'Fay', email = 'contact@colinfay.me', role = c('cre', 'aut'))
+Description: Prototype your shiny apps quickly with these Lorem-Ipsum-like Helpers.
+License: MIT + file LICENSE
+LazyData: true
+URL: https://github.com/Thinkr-open/shinipsum
+BugReports: https://github.com/Thinkr-open/shinipsum/issues
+Encoding: UTF-8
+Suggests: 
+    testthat
+Imports: 
+    attempt (>= 0.2.1),
+    ggplot2 (>= 3.0.0),
+    magrittr,
+    DT
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 6.1.0

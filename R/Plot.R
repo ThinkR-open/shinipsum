@@ -9,7 +9,7 @@ random_ggplot <- function(type = NULL) {
       1)
   }
   r <- switch(type,
-      "point" = sample(0:1, 1),
+      "point" = sample(0:3, 1),
       "bar" = sample(10:11, 1),
       "boxplot" = sample(20:21, 1),
       "col" = sample(30:31, 1),
@@ -31,6 +31,19 @@ random_ggplot <- function(type = NULL) {
         geom_point() +
         scale_color_viridis_d() +
         facet_grid(rows = vars(Species)) +
+        theme_minimal()
+    ),
+    "2" = list(
+      ggplot(mtcars) +
+        aes(mpg, disp, color = vs) +
+        geom_point() +
+        theme_minimal()
+    ),
+    "3" = list(
+      ggplot(mtcars) +
+        aes(wt, qsec, color = as.factor(cyl)) +
+        geom_point() +
+        scale_color_viridis_d() +
         theme_minimal()
     ),
     "10" = list(

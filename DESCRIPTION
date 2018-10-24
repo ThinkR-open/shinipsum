@@ -11,7 +11,7 @@ Encoding: UTF-8
 Suggests: 
     testthat
 Imports: 
-    attempt (>= 0.2.1),
+    attempt,
     ggplot2 (>= 3.0.0),
     magrittr,
     DT

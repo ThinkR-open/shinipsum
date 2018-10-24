@@ -1,20 +1,11 @@
----
-output: github_document
----
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
-```
 # shinipsum
 
-The goal of shinipsum is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.
+The goal of shinipsum is to provide random shiny elements for easiest
+shiny app prototyping, so that you can focus on building the frontend
+before building the backend.
 
 ## Installation
 
@@ -28,7 +19,7 @@ remotes::install_github("Thinkr-open/shinipsum")
 
 Here is an example of using `{shinipsum}` to generate a random app:
 
-```{r eval = FALSE}
+``` r
 library(shiny)
 library(shinipsum)
 ui <- fluidPage(
@@ -67,9 +58,10 @@ server <- function(input, output, session) {
   })
 }
 shinyApp(ui, server)
-
 ```
 
 ![](inst/shinipsum.png)
 
-Please note that the [34m'shinipsum'[39m project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+Please note that the \[34m’shinipsum’\[39m project is released with a
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to
+this project, you agree to abide by its terms.

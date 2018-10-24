@@ -15,6 +15,15 @@ You can install the dev version of shinipsum from GitHub with:
 remotes::install_github("Thinkr-open/shinipsum")
 ```
 
+## Available ipsums :
+
+  - DataTable, `random_DT`
+  - Image, `random_image`
+  - Plot, `random_ggplot`
+  - Print, `random_print`
+  - Table, `random_table`
+  - Text, `random_text`
+
 ## Example
 
 Here is an example of using `{shinipsum}` to generate a random app:

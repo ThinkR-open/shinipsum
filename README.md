@@ -22,9 +22,10 @@ Here is an example of using `{shinipsum}` to generate a random app:
 ``` r
 library(shiny)
 library(shinipsum)
+library(DT)
 ui <- fluidPage(
   h2("A Random DT"),
-  dataTableOutput("data_table"),
+  DTOutput("data_table"),
   h2("A Random Image"),
   plotOutput("image", height = "300px"),
   h2("A Random Plot"),
@@ -38,8 +39,8 @@ ui <- fluidPage(
 )
 
 server <- function(input, output, session) {
-  output$data_table <- renderDataTable({
-    random_table(10, 5)
+  output$data_table <- DT::renderDT({
+    random_DT(10, 5)
   })
   output$image <- renderImage({
     random_image()

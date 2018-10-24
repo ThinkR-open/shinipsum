@@ -31,3 +31,4 @@ usethis::use_test("random")
 usethis::use_test("DT")
 usethis::use_test("print")
 
+usethis::use_code_of_conduct()

@@ -6,6 +6,5 @@ random_DT <- function(nrow, ncol,
                                "character", "numchar"),
                       ...){
   type <- match.arg(type)
-  random_table(nrow, ncol, type) %>%
-    datatable(...)
+  random_table(nrow, ncol, type)
 }

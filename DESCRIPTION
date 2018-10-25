@@ -15,6 +15,7 @@ Imports:
     ggplot2 (>= 3.0.0),
     magrittr,
     DT,
-    plotly
+    plotly,
+    dygraphs
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 6.1.0

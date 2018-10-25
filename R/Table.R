@@ -1,3 +1,11 @@
+#' A Random Table
+#'
+#' This function returns a table that can be passed to `renderTable` and `tableOutput`.
+#'
+#' @inheritParams random_DT
+#'
+#' @return a table
+#'
 #' @export
 #'
 random_table <- function(nrow, ncol,

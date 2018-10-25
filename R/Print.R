@@ -1,5 +1,7 @@
 #' A Random print output
 #'
+#' This function returns a random print output that can be passed to `renderPrint` and `verbatimTextOutput`.
+#'
 #' @param type type of the output ("character", "numeric", "model", "table")
 #'
 #' @return a random print

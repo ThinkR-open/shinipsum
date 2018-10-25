@@ -1,4 +1,11 @@
+#' A Random Lorem Ipsum
+#'
+#' @param nchars number of characters. One of the two params should be left NULL.
+#' @param nwords number of words to return. One of the two params should be left NULL.
+#'
 #' @importFrom attempt stop_if_all
+#'
+#' @return a text
 #'
 #' @export
 

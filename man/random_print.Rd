@@ -13,5 +13,5 @@ random_print(type = c("character", "numeric", "model", "table"))
 a random print
 }
 \description{
-A Random print output
+This function returns a random print output that can be passed to \code{renderPrint} and \code{verbatimTextOutput}.
 }

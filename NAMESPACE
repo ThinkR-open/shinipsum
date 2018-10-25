@@ -3,6 +3,7 @@
 export("%>%")
 export(random_DT)
 export(random_ggplot)
+export(random_ggplotly)
 export(random_image)
 export(random_print)
 export(random_table)

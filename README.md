@@ -17,12 +17,62 @@ remotes::install_github("Thinkr-open/shinipsum")
 
 ## Available ipsums :
 
-  - DataTable, `random_DT`
-  - Image, `random_image`
-  - Plot, `random_ggplot`
-  - Print, `random_print`
-  - Table, `random_table`
-  - Text, `random_text`
+### DataTable
+
+`random_DT` takes 4 args :
+
+  - `nrow` & `ncol`: number of row and columns of the table
+  - `type` : random, numeric, character, numchar - the type of the
+    columns
+  - `...` : args to be passed to `DT::datatable`
+
+### Image
+
+`random_image` returns a random image
+
+### Plot
+
+`random_ggplot` takes one arg :
+
+  - `type` : Can be any of “random”, “point”, “bar”, “boxplot”,“col”,
+    “tile”, “line”, “bin2d”, “contour”, “density”, “density\_2d”,
+    “dotplot”, “hex”, “freqpoly”, “histogram”, “ribbon”, “raster”,
+    “tile”, “violin” and defines the geom of the ggplot. Default is
+    “random”, and chooses a random geom for you.
+
+Default theme is minimal.
+
+As the return object is a `ggplot`, it can be enhanced like any other
+ggplot with `+`
+
+``` r
+random_ggplot(type = "col") + 
+  labs(title = "Random plot") + 
+  theme_bw()
+```
+
+`random_ggplotly` calls the `ggplotly` function on a `random_ggplot`.
+
+### Print
+
+`random_print` takes one arg:
+
+  - `type`: can be any of `"character", "numeric", "model", "table"`,
+    and defines the type of print. Default is `"character"`.
+
+### Table
+
+`random_table` takes three args : `nrow`, `ncols` and `type`. See
+`random_DT`.
+
+### Text
+
+`random_text` takes one of these two args :
+
+  - `nchar` : lorem ipsum of `nchar` characters
+  - `nwords` : lorem ipsum of `nwords` characters
+
+One of the two should be left `NULL`
 
 ## Example
 

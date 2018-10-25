@@ -48,7 +48,7 @@ Default theme is minimal.
 
 As the return object is a `ggplot`, it can be enhanced like any other ggplot with `+`
 
-```{r}
+```{r eval = FALSE}
 random_ggplot(type = "col") + 
   labs(title = "Random plot") + 
   theme_bw()

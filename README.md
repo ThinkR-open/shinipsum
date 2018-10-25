@@ -17,6 +17,12 @@ remotes::install_github("Thinkr-open/shinipsum")
 
 ## Available ipsums :
 
+> Note: {shinipsum} only imports functions which are necessary to its
+> internal job. If you want to customise an output or to use a renderXX
+> / XXOutput, you’ll need to explicitely load the packages needed (for
+> example, if you want to customise a dygraph, a ggplot, or use
+> ggplotly).
+
 ### DataTable
 
 `random_DT` takes 4 args :
@@ -43,15 +49,31 @@ remotes::install_github("Thinkr-open/shinipsum")
 Default theme is minimal.
 
 As the return object is a `ggplot`, it can be enhanced like any other
-ggplot with `+`
+ggplot with `+`.
 
 ``` r
+library(ggplot2)
 random_ggplot(type = "col") + 
   labs(title = "Random plot") + 
   theme_bw()
 ```
 
 `random_ggplotly` calls the `ggplotly` function on a `random_ggplot`.
+
+### Dygraph
+
+`random_dygraph` returns a random dygprah. It takes one arg:
+
+  - `...`: arguments which are passed to the `dygraph()` function.
+
+As the return object is a `dygraph`, it can be enhanced like any other
+dygraph.
+
+``` r
+library(dygraphs)
+random_dygraph()  %>% 
+  dyRangeSelector()
+```
 
 ### Print
 

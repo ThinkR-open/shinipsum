@@ -5,7 +5,6 @@
 #' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin" and defines the geom of the ggplot. Default is "random", and chooses a random geom for you.
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line facet_grid geom_col scale_fill_viridis_c
-#' @importFrom dplyr case_when count vars
 #'
 #' @return a ggplot
 #'
@@ -21,9 +20,9 @@ random_ggplot <- function(type = c("random", "point", "bar",
   type_matched <- match.arg(type)
 
   if (type_matched == "random") {
-    type_matched <- sample(type, 1)
+    type_matched <- sample(formals()$type, 1)
   }
-  r <- switch(type_matched,
+  r <- switch(as.character(type_matched),
       "point" = sample(0:5, 1),
       "bar" = sample(10:11, 1),
       "boxplot" = sample(20:21, 1),
@@ -57,7 +56,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
         aes(Sepal.Length, Petal.Width, color = Species) +
         geom_point() +
         scale_color_viridis_d() +
-        facet_grid(rows = vars(Species)) +
+        facet_grid(.  ~ Species) +
         theme_minimal()
     ),
     "2" = list(

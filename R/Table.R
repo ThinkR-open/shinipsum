@@ -14,7 +14,7 @@ random_table <- function(nrow, ncol,
   type <- match.arg(type)
   l <- switch (type,
                "random" = list(
-                 iris, AirPassengers, ability.cov$cov, anscombe,
+                 iris, ability.cov$cov, anscombe,
                  attitude, beaver1, CO2, esoph, longley, mtcars,
                  Puromycin
                ),
@@ -23,7 +23,7 @@ random_table <- function(nrow, ncol,
                  Puromycin, ToothGrowth
                ),
                "numeric" = list(
-                 iris, AirPassengers, ability.cov$cov, anscombe,
+                 iris, ability.cov$cov, anscombe,
                  attitude, beaver1, longley, mtcars
                ),
                "character" = list(
@@ -31,6 +31,10 @@ random_table <- function(nrow, ncol,
                )
   )
   df <- sample(l, 1)[[1]]
+  ncol(df)
+  while (ncol(df) < 1){
+    df <- sample(l, 1)[[1]]
+  }
   while(ncol(df) < ncol){
     df <- cbind(df, df)
   }

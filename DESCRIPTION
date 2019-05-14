@@ -1,21 +1,41 @@
 Package: shinipsum
 Title: Lorem-Ipsum-like Helpers for fast Shiny Prototyping
 Version: 0.0.0.9000
-Authors@R: person('Colin', 'Fay', email = 'contact@colinfay.me', role = c('cre', 'aut'), comment=c(ORCID="0000-0001-7343-1846"))
-Description: Prototype your shiny apps quickly with these Lorem-Ipsum-like Helpers.
+Authors@R: 
+    c(person(given = "Colin",
+             family = "Fay",
+             role = c("cre", "aut"),
+             email = "contact@colinfay.me",
+             comment = c(ORCID = "0000-0001-7343-1846")),
+      person(given = "Sebastien",
+             family = "Rochette",
+             role = "aut",
+             email = "sebastien@thinkr.fr",
+             comment = c(ORCID = "0000-0002-1565-9313")),
+      person(given = "ThinkR",
+             role = c("cph", "fnd")))
+Description: Prototype your shiny apps quickly with these
+    Lorem-Ipsum-like Helpers.
 License: MIT + file LICENSE
-LazyData: true
 URL: https://github.com/Thinkr-open/shinipsum
 BugReports: https://github.com/Thinkr-open/shinipsum/issues
-Encoding: UTF-8
-Suggests: 
-    testthat
+Depends: 
+    R (>= 2.10)
 Imports: 
     attempt,
+    datasets,
+    DT,
+    dygraphs,
     ggplot2 (>= 3.0.0),
     magrittr,
-    DT,
     plotly,
-    dygraphs
+    stats,
+    utils
+Suggests: 
+    covr,
+    pkgdown,
+    testthat
+Encoding: UTF-8
+LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 6.1.0
+RoxygenNote: 6.1.1

@@ -5,6 +5,8 @@
 #' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin" and defines the geom of the ggplot. Default is "random", and chooses a random geom for you.
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line facet_grid geom_col scale_fill_viridis_c
+#' @importFrom ggplot2 xlim ylim geom_bin2d geom_contour geom_density geom_density_2d geom_dotplot
+#' @importFrom ggplot2 geom_hex geom_freqpoly stat geom_histogram geom_ribbon geom_raster geom_violin
 #'
 #' @return a ggplot
 #'
@@ -45,14 +47,14 @@ random_ggplot <- function(type = c("random", "point", "bar",
 
   res <- switch(as.character(r),
     "0" = list(
-      ggplot(iris) +
+      ggplot(datasets::iris) +
         aes(Sepal.Length, Sepal.Width, color = Species) +
         geom_point() +
         scale_color_viridis_d() +
         theme_minimal()
     ),
     "1" = list(
-      ggplot(iris) +
+      ggplot(datasets::iris) +
         aes(Sepal.Length, Petal.Width, color = Species) +
         geom_point() +
         scale_color_viridis_d() +
@@ -60,32 +62,32 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "2" = list(
-      ggplot(mtcars) +
+      ggplot(datasets::mtcars) +
         aes(mpg, disp, color = vs) +
         geom_point() +
         theme_minimal()
     ),
     "3" = list(
-      ggplot(mtcars) +
+      ggplot(datasets::mtcars) +
         aes(wt, qsec, color = as.factor(cyl)) +
         geom_point() +
         scale_color_viridis_d() +
         theme_minimal()
     ),
     "4" = list(
-      ggplot(airquality) +
+      ggplot(datasets::airquality) +
         aes(Solar.R, Wind, color = as.factor(Month)) +
         geom_point() +
         theme_minimal()
     ),
     "5" = list(
-      ggplot(airquality) +
+      ggplot(datasets::airquality) +
         aes(Wind, Temp, color = as.factor(Month)) +
         geom_point() +
         theme_minimal()
     ),
     "10" = list(
-      ggplot(airquality) +
+      ggplot(datasets::airquality) +
         aes(Temp) +
         geom_bar() +
         scale_color_viridis_d() +
@@ -93,19 +95,19 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "11" = list(
-      ggplot(mtcars) +
+      ggplot(datasets::mtcars) +
         aes(cyl) +
         geom_bar(fill = "#440154FF") +
         theme_minimal()
     ),
     "20" = list(
-      ggplot(airquality) +
+      ggplot(datasets::airquality) +
         aes(Month, Ozone, group = Month) +
         geom_boxplot() +
         theme_minimal()
     ),
     "21" = list(
-      ggplot(iris) +
+      ggplot(datasets::iris) +
         aes(Species, Sepal.Length, group = Species) +
         geom_boxplot() +
         coord_flip() +
@@ -136,13 +138,13 @@ random_ggplot <- function(type = c("random", "point", "bar",
         scale_fill_viridis_c()
     ),
     "50" = list(
-      ggplot(women) +
+      ggplot(datasets::women) +
         aes(height, weight) +
         geom_line(size = 2) +
         theme_minimal()
     ),
     "51" = list(
-      ggplot(cars) +
+      ggplot(datasets::cars) +
         aes(speed, dist) +
         geom_line() +
         theme_minimal()
@@ -156,23 +158,23 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "61" = list(
-      ggplot(mtcars) +
+      ggplot(datasets::mtcars) +
         aes(mpg, disp) +
         geom_bin2d() +
         theme_minimal()
     ),
     "70" = list(
-      ggplot(faithfuld, aes(waiting, eruptions, z = density)) +
+      ggplot(ggplot2::faithfuld, aes(waiting, eruptions, z = density)) +
         geom_contour() +
         theme_minimal()
     ),
     "71" = list(
-      ggplot(faithfuld, aes(waiting, eruptions, z = density)) +
+      ggplot(ggplot2::faithfuld, aes(waiting, eruptions, z = density)) +
         geom_contour(binwidth = 0.001) +
         theme_minimal()
     ),
     "80" = list(
-      ggplot(iris, aes(Sepal.Length)) +
+      ggplot(datasets::iris, aes(Sepal.Length)) +
         geom_density() +
         theme_minimal()
     ),
@@ -188,7 +190,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "90" = list(
-      ggplot(faithful, aes(x = eruptions, y = waiting)) +
+      ggplot(datasets::faithful, aes(x = eruptions, y = waiting)) +
         geom_point() +
         xlim(0.5, 6) +
         ylim(40, 110) +
@@ -202,12 +204,12 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "100" = list(
-      ggplot(airquality, aes(x = Temp)) +
+      ggplot(datasets::airquality, aes(x = Temp)) +
         geom_dotplot() +
         theme_minimal()
     ),
     "101" = list(
-      ggplot(iris, aes(x = Sepal.Length, fill = Species)) +
+      ggplot(datasets::iris, aes(x = Sepal.Length, fill = Species)) +
         geom_dotplot() +
         theme_minimal()
     ),
@@ -217,7 +219,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "111" = list(
-      ggplot(iris, aes(Sepal.Length, Sepal.Width)) +
+      ggplot(datasets::iris, aes(Sepal.Length, Sepal.Width)) +
         geom_hex() +
         theme_minimal()
     ),
@@ -233,7 +235,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "130" = list(
-      ggplot(iris, aes(Sepal.Length, fill = Species)) +
+      ggplot(datasets::iris, aes(Sepal.Length, fill = Species)) +
         geom_histogram(binwidth = 0.5)  +
         theme_minimal()
     ),
@@ -244,23 +246,23 @@ random_ggplot <- function(type = c("random", "point", "bar",
     ),
     "140" = list(
       ggplot(data.frame(year = 1875:1972,
-                        level = as.vector(LakeHuron)), aes(year)) +
+                        level = as.vector(datasets::LakeHuron)), aes(year)) +
         geom_ribbon(aes(ymin=0, ymax=level))  +
         theme_minimal()
     ),
     "141" = list(
       ggplot(data.frame(year = 1875:1972,
-                        level = as.vector(LakeHuron)), aes(year)) +
+                        level = as.vector(datasets::LakeHuron)), aes(year)) +
         geom_ribbon(aes(ymin = level - 1, ymax = level + 1), fill = "grey70")   +
         theme_minimal()
     ),
     "150" = list(
-      ggplot(faithfuld, aes(waiting, eruptions)) +
+      ggplot(ggplot2::faithfuld, aes(waiting, eruptions)) +
         geom_raster(aes(fill = density))  +
         theme_minimal()
     ),
     "151" = list(
-      ggplot(faithfuld, aes(waiting, eruptions)) +
+      ggplot(ggplot2::faithfuld, aes(waiting, eruptions)) +
         geom_raster(aes(fill = density), interpolate = TRUE)   +
         theme_minimal()
     ),
@@ -285,12 +287,12 @@ random_ggplot <- function(type = c("random", "point", "bar",
         theme_minimal()
     ),
     "170" = list(
-      ggplot(mtcars, aes(factor(cyl), mpg)) +
+      ggplot(datasets::mtcars, aes(factor(cyl), mpg)) +
         geom_violin() +
         theme_minimal()
     ),
     "171" = list(
-      ggplot(iris, aes(Species, Sepal.Length)) +
+      ggplot(datasets::iris, aes(Species, Sepal.Length)) +
         geom_violin() +
         theme_minimal()
     )
@@ -305,6 +307,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
 #' This function returns a ggplotly object, which can be passed to `renderPlotly` and `plotlyOutput`
 #'
 #' @param ... arg to pass to `random_ggplot`.
+#' @importFrom plotly ggplotly
 #'
 #' @return a ggplotly
 #' @export

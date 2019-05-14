@@ -1,9 +1,21 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+<!-- badges: start -->
+
+[![Travis build
+status](https://travis-ci.org/ThinkR-open/shinipsum.svg?branch=master)](https://travis-ci.org/ThinkR-open/shinipsum)
+[![AppVeyor build
+status](https://ci.appveyor.com/api/projects/status/github/ThinkR-open/shinipsum?branch=master&svg=true)](https://ci.appveyor.com/project/ThinkR-open/shinipsum)
+[![Codecov test
+coverage](https://codecov.io/gh/ThinkR-open/shinipsum/branch/master/graph/badge.svg)](https://codecov.io/gh/ThinkR-open/shinipsum?branch=master)
+<!-- badges: end -->
+
+<img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" width=250px>
+
 # shinipsum
 
-The goal of shinipsum is to provide random shiny elements for easiest
+The goal of {shinipsum} is to provide random shiny elements for easiest
 shiny app prototyping, so that you can focus on building the frontend
 before building the backend.
 
@@ -15,12 +27,35 @@ You can install the dev version of shinipsum from GitHub with:
 remotes::install_github("Thinkr-open/shinipsum")
 ```
 
+## Demo
+
+Available examples:
+
+``` r
+library(shinipsum)
+#> Registered S3 methods overwritten by 'ggplot2':
+#>   method         from 
+#>   [.quosures     rlang
+#>   c.quosures     rlang
+#>   print.quosures rlang
+ipsum_examples()
+#> [1] "01_navbar.R"
+```
+
+You can run `{shinipsum}` demos with:
+
+``` r
+shiny::runApp(
+  ipsum_examples("01_navbar.R")
+)
+```
+
 ## Available ipsums :
 
-> Note: {shinipsum} only imports functions which are necessary to its
+> Note: {shinipsum} only load functions which are necessary to its
 > internal job. If you want to customise an output or to use a renderXX
-> / XXOutput, you’ll need to explicitely load the packages needed (for
-> example, if you want to customise a dygraph, a ggplot, or use
+> / XXOutput, you’ll need to **explicitely** load the packages needed
+> (for example, if you want to customise a dygraph, a ggplot, or use
 > ggplotly).
 
 ### DataTable
@@ -34,7 +69,7 @@ remotes::install_github("Thinkr-open/shinipsum")
 
 ### Image
 
-`random_image` returns a random image
+`random_image` returns a random image.
 
 ### Plot
 
@@ -142,7 +177,7 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
-![](inst/shinipsum.png)
+<img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/shinipsum.png">
 
 Please note that the ‘shinipsum’ project is released with a [Contributor
 Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project,

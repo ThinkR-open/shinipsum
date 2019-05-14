@@ -1,0 +1,14 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^dev_history\.R$
+^\.travis\.yml$
+^appveyor\.yml$
+^codecov\.yml$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^img$
+^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
+^README\.Rmd$
+^data-raw$

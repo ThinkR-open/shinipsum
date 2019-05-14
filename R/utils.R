@@ -1,5 +1,5 @@
 vec_ipsum <- function(x){
-  sample(lorem_words, x)
+  sample(shinipsum::lorem_words, x)
 }
 
 random_ipsum <- function(nrow, ncol){

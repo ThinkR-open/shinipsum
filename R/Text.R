@@ -23,12 +23,12 @@ random_text <- function(nchars = NULL, nwords = NULL){
 
   if (!is.null(nchars)){
     res <- substr(
-      lorem,
+      shinipsum::lorem,
       1,
       nchars
     )
   } else {
-    res <- paste(lorem_words[1:nwords], collapse = " ")
+    res <- paste(shinipsum::lorem_words[1:nwords], collapse = " ")
   }
   res
 }

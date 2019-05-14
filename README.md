@@ -19,6 +19,9 @@ The goal of {shinipsum} is to provide random shiny elements for easiest
 shiny app prototyping, so that you can focus on building the frontend
 before building the backend.
 
+The full documentation is in the {pkgdown} site:
+<https://thinkr-open.github.io/shinipsum/>
+
 ## Installation
 
 You can install the dev version of shinipsum from GitHub with:

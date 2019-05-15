@@ -2,12 +2,12 @@
 % Please edit documentation in R/shinipsum-package.R
 \docType{package}
 \name{shinipsum-package}
-\alias{shinipsum-package}
-\alias{_PACKAGE}
 \alias{shinipsum}
-\title{Lorem-Ipsum-like Helpers for fast Shiny Prototyping}
+\alias{shinipsum-package}
+\title{shinipsum: Lorem-Ipsum-like Helpers for fast Shiny Prototyping}
 \description{
-The goal of shinipsum is to prototype your shiny apps quickly with these Lorem-Ipsum-like Helpers.
+Prototype your shiny apps quickly with these
+    Lorem-Ipsum-like Helpers.
 }
 \seealso{
 Useful links:
@@ -18,6 +18,17 @@ Useful links:
 
 }
 \author{
-Colin Fay \href{mailto:colin@thinkr.fr}{colin@thinkr.fr}
+\strong{Maintainer}: Colin Fay \email{contact@colinfay.me} (0000-0001-7343-1846)
+
+Authors:
+\itemize{
+  \item Sebastien Rochette \email{sebastien@thinkr.fr} (0000-0002-1565-9313)
+}
+
+Other contributors:
+\itemize{
+  \item ThinkR [copyright holder, funder]
+}
+
 }
 \keyword{internal}

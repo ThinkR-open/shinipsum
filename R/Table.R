@@ -4,6 +4,7 @@
 #'
 #' @inheritParams random_DT
 #'
+#'
 #' @return a table
 #'
 #' @export
@@ -14,17 +15,19 @@ random_table <- function(nrow, ncol,
   type <- match.arg(type)
   l <- switch (type,
                "random" = list(
-                 iris, ability.cov$cov, anscombe,
-                 attitude, beaver1, CO2, esoph, longley, mtcars,
-                 Puromycin
+                 datasets::iris, datasets::ability.cov$cov, datasets::anscombe,
+                 datasets::attitude, datasets::beaver1, datasets::CO2, datasets::esoph,
+                 datasets::longley, datasets::mtcars,
+                 datasets::Puromycin
                ),
                "numchar" = list(
-                 iris, CO2, esoph, InsectSprays, OrchardSprays,
-                 Puromycin, ToothGrowth
+                 datasets::iris, datasets::CO2, datasets::esoph,
+                 datasets::InsectSprays, datasets::OrchardSprays,
+                 datasets::Puromycin, datasets::ToothGrowth
                ),
                "numeric" = list(
-                 iris, ability.cov$cov, anscombe,
-                 attitude, beaver1, longley, mtcars
+                 datasets::iris, datasets::ability.cov$cov, datasets::anscombe,
+                 datasets::attitude, datasets::beaver1, datasets::longley, datasets::mtcars
                ),
                "character" = list(
                  random_ipsum(nrow, ncol)

@@ -13,9 +13,21 @@ knitr::opts_chunk$set(
 )
 ```
 
+<!-- badges: start -->
+
+[![Travis build status](https://travis-ci.org/ThinkR-open/shinipsum.svg?branch=master)](https://travis-ci.org/ThinkR-open/shinipsum)
+[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ThinkR-open/shinipsum?branch=master&svg=true)](https://ci.appveyor.com/project/ThinkR-open/shinipsum)
+[![Codecov test coverage](https://codecov.io/gh/ThinkR-open/shinipsum/branch/master/graph/badge.svg)](https://codecov.io/gh/ThinkR-open/shinipsum?branch=master)
+<!-- badges: end -->
+
+<img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" width=250px>
+
 # shinipsum
 
-The goal of shinipsum is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.
+The goal of {shinipsum} is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.
+
+
+The full documentation is in the {pkgdown} site: <https://thinkr-open.github.io/shinipsum/>
 
 ## Installation
 
@@ -30,6 +42,7 @@ remotes::install_github("Thinkr-open/shinipsum")
 Available examples: 
 
 ```{r}
+library(shinipsum)
 ipsum_examples()
 ```
 
@@ -159,6 +172,6 @@ shinyApp(ui, server)
 
 ```
 
-![](inst/shinipsum.png)
+<img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/shinipsum.png">
 
 Please note that the 'shinipsum' project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.

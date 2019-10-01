@@ -14,7 +14,11 @@ expect_nrow <- function(a, b){
 }
 
 test_that("DT works", {
-  a <- random_DT(10, 15)
-  expect_nrow(a$x$data, 10)
-  expect_ncol(a$x$data, 15)
+  lapply(
+    1:100, function(x){
+      a <- random_DT(10, 15)
+      expect_nrow(a$x$data, 10)
+      expect_ncol(a$x$data, 15)
+    }
+  )
 })

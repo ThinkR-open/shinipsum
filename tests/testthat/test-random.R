@@ -14,10 +14,13 @@ expect_nrow <- function(a, b){
 }
 
 test_that("random works", {
-  expect_length(vec_ipsum(10), 10)
-  expect_length(vec_ipsum(100), 100)
-  expect_nrow(random_ipsum(10, 10), 10)
-  expect_nrow(random_ipsum(100, 10), 100)
-  expect_ncol(random_ipsum(10, 10), 10)
-  expect_ncol(random_ipsum(10, 100), 100)
+  lapply(
+    1:100, function(x){
+      expect_length(vec_ipsum(10), 10)
+      expect_length(vec_ipsum(100), 100)
+      expect_nrow(random_ipsum(10, 10), 10)
+      expect_nrow(random_ipsum(100, 10), 100)
+      expect_ncol(random_ipsum(10, 10), 10)
+      expect_ncol(random_ipsum(10, 100), 100)
+    })
 })

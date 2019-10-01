@@ -22,8 +22,10 @@ random_ggplot <- function(type = c("random", "point", "bar",
   type_matched <- match.arg(type)
 
   if (type_matched == "random") {
-    type_matched <- sample(formals()$type, 1)
+    # Removed random from the formals match
+    type_matched <- sample(formals()$type[-1], 1)
   }
+
   r <- switch(as.character(type_matched),
       "point" = sample(0:5, 1),
       "bar" = sample(10:11, 1),

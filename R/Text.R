@@ -2,6 +2,7 @@
 #'
 #' @param nchars number of characters. One of the two params should be left NULL.
 #' @param nwords number of words to return. One of the two params should be left NULL.
+#' @param offset number of characters or words to offset the result by. Defaults to 0.
 #'
 #' @importFrom attempt stop_if_all
 #'

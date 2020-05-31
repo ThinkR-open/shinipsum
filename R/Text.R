@@ -9,7 +9,7 @@
 #'
 #' @export
 
-random_text <- function(nchars = NULL, nwords = NULL,offset=0){
+random_text <- function(nchars = NULL, nwords = NULL, offset=0){
   stop_if_all(
     c(nchars, nwords),
     is.null,

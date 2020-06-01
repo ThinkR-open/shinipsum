@@ -38,7 +38,6 @@ test_that("nchar works", {
     })
 })
 
-
 test_that("offset works", {
   lapply(
     1:100, function(x){

@@ -25,15 +25,15 @@ test_that("nchar works", {
 
       expect_nchar(
         random_text(nwords = 12),
-        83
+        86
       )
       expect_nchar(
         random_text(nwords = 100),
-        643
+        650
       )
       expect_nchar(
         random_text(nwords = 800),
-        5239
+        5244
       )
     })
 })

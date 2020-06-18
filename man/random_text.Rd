@@ -4,12 +4,14 @@
 \alias{random_text}
 \title{A Random Lorem Ipsum}
 \usage{
-random_text(nchars = NULL, nwords = NULL)
+random_text(nchars = NULL, nwords = NULL, offset = 0)
 }
 \arguments{
 \item{nchars}{number of characters. One of the two params should be left NULL.}
 
 \item{nwords}{number of words to return. One of the two params should be left NULL.}
+
+\item{offset}{number of characters or words to offset the result by. Defaults to 0.}
 }
 \value{
 a text

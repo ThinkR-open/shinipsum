@@ -25,15 +25,46 @@ test_that("nchar works", {
 
       expect_nchar(
         random_text(nwords = 12),
-        83
+        86
       )
       expect_nchar(
         random_text(nwords = 100),
-        643
+        650
       )
       expect_nchar(
         random_text(nwords = 800),
-        5239
+        5244
+      )
+    })
+})
+
+test_that("offset works", {
+  lapply(
+    1:100, function(x){
+      expect_nchar(
+        random_text(nchars = 10, offset = 10),
+        10
+      )
+      expect_nchar(
+        random_text(nchars = 100, offset = 20),
+        100
+      )
+      expect_nchar(
+        random_text(nchars = 42, offset = 20),
+        42
+      )
+
+      expect_nchar(
+        random_text(nwords = 12, offset = 20),
+        51
+      )
+      expect_nchar(
+        random_text(nwords = 100, offset = 20),
+        526
+      )
+      expect_nchar(
+        random_text(nwords = 800, offset = 20),
+        5105
       )
     })
 })

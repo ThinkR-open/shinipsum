@@ -8,12 +8,15 @@
 #'
 random_lm <- function(nobs, nx){
 
-  dataset <- shinipsum::random_table(nrow = nobs, ncol = nx, type = "numeric")
+  x <- rnorm(nobs*(nx - 1))
 
-  x <- as.matrix(dataset[, -1])
+  x <- cbind(1, matrix(x, nobs, (nx-1)))
 
-  y <- dataset[, 1]
+  coefficients <- sample(1:nobs, nx)
 
-  lm(y~x)
+  y <- c(coefficients%*%t(x)) + rnorm(nobs)
+
+  lm(y ~ x - 1)
+  
 
 }

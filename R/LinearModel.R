@@ -8,6 +8,8 @@
 #'
 random_lm <- function(nobs, nx){
 
+  try(if(nobs < nx) stop("Less observations than variables"))
+
   x <- rnorm(nobs*(nx - 1))
 
   x <- cbind(1, matrix(x, nobs, (nx-1)))

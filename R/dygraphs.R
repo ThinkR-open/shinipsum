@@ -10,7 +10,7 @@
 
 random_dygraph <- function(...){
 
-  switch (as.character(sample(1:5, 1)),
+  switch (as.character(sample(1:7, 1)),
     "1" = dygraph(cbind(datasets::mdeaths, datasets::fdeaths), ...),
     "2" = dygraph(
       predict(HoltWinters(datasets::ldeaths), n.ahead = 72, prediction.interval = TRUE),

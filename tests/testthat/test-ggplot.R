@@ -1,5 +1,3 @@
-context("test-ggplot.R")
-
 test_that("ggplot creation works", {
   lapply(
     1:100, function(x){

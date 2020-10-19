@@ -4,8 +4,7 @@
 \alias{random_print}
 \title{A Random print output}
 \usage{
-random_print(type = c("character", "numeric", "integer", "model",
-  "table"))
+random_print(type = c("character", "numeric", "integer", "model", "table"))
 }
 \arguments{
 \item{type}{type of the output ("character", "numeric", "model", "table")}

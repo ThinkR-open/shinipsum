@@ -4,8 +4,7 @@
 \alias{random_table}
 \title{A Random Table}
 \usage{
-random_table(nrow, ncol, type = c("random", "numeric", "character",
-  "numchar"))
+random_table(nrow, ncol, type = c("random", "numeric", "character", "numchar"))
 }
 \arguments{
 \item{nrow}{number of row of the output}

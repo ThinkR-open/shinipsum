@@ -4,8 +4,12 @@
 \alias{random_DT}
 \title{A Random DT}
 \usage{
-random_DT(nrow, ncol, type = c("random", "numeric", "character",
-  "numchar"), ...)
+random_DT(
+  nrow,
+  ncol,
+  type = c("random", "numeric", "character", "numchar"),
+  ...
+)
 }
 \arguments{
 \item{nrow}{number of row of the output}

@@ -18,8 +18,13 @@ usethis::use_travis()
 usethis::use_appveyor()
 usethis::use_coverage()
 usethis::use_pkgdown()
-
+usethis::use_github_action_check_standard()
+usethis::use_github_action("pkgdown")
+usethis::use_github_action("test-coverage")
+# PR
+usethis::pr_fetch(7)
+usethis::pr_push()
 
 # dev
-attachment::att_to_description(extra.suggests = c("pkgdown", "covr"))
+attachment::att_to_description()
 devtools::check()

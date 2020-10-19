@@ -4,7 +4,9 @@
 \name{lorem_words}
 \alias{lorem_words}
 \title{Lorem test as vector}
-\format{An object of class \code{character} of length 13657.}
+\format{
+An object of class \code{character} of length 13657.
+}
 \usage{
 lorem_words
 }

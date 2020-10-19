@@ -2,11 +2,13 @@
 #'
 #' This function returns a model which can be passed to renderText or renderTable if pre-processed appropriately
 #'
-#' @return a model
+#' @param nobs Numeric. number of observation
+#' @param nx Numeric. number of variables. Should be lower that nobs
+#' @return a model output
 #'
 #' @export
 #'
-random_lm <- function(nobs, nx){
+random_lm <- function(nobs = 100, nx = 2){
 
   try(if(nobs < nx) stop("Less observations than variables"))
 
@@ -19,6 +21,6 @@ random_lm <- function(nobs, nx){
   y <- c(coefficients%*%t(x)) + rnorm(nobs)
 
   lm(y ~ x - 1)
-  
+
 
 }

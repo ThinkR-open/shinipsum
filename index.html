@@ -198,14 +198,25 @@
 <div id="text" class="section level3">
 <h3 class="hasAnchor">
 <a href="#text" class="anchor"></a>Text</h3>
-<p><code>random_text</code> takes one of these two args :</p>
+<p><code>random_text</code> takes one of these two args:</p>
 <ul>
 <li>
-<code>nchar</code> : lorem ipsum of <code>nchar</code> characters</li>
+<code>nchar</code>: lorem ipsum of <code>nchar</code> characters</li>
 <li>
-<code>nwords</code> : lorem ipsum of <code>nwords</code> characters</li>
+<code>nwords</code>: lorem ipsum of <code>nwords</code> characters</li>
 </ul>
 <p>One of the two should be left <code>NULL</code></p>
+</div>
+<div id="lm" class="section level3">
+<h3 class="hasAnchor">
+<a href="#lm" class="anchor"></a>Lm</h3>
+<p><code>random_lm</code> returns a random <code>lm</code> model output:</p>
+<ul>
+<li>
+<code>nobs</code>: Number of observations</li>
+<li>
+<code>nx</code>: Number of variables (should be lower than <code>nobs</code>)</li>
+</ul>
 </div>
 </div>
 <div id="example" class="section level2">

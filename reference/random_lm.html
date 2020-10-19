@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>A Random Table — random_table • shinipsum</title>
+<title>A Random Linear Model — random_lm • shinipsum</title>
 
 
 <!-- jquery -->
@@ -35,8 +35,8 @@
 <link href="../pkgdown.css" rel="stylesheet">
 <script src="../pkgdown.js"></script>
 
-<meta property="og:title" content="A Random Table — random_table" />
-<meta property="og:description" content="This function returns a table that can be passed to renderTable and tableOutput." />
+<meta property="og:title" content="A Random Linear Model — random_lm" />
+<meta property="og:description" content="This function returns a model which can be passed to renderText or renderTable if pre-processed appropriately" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -131,37 +131,33 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>A Random Table</h1>
-    <small class="dont-index">Source: <a href='https://github.com/Thinkr-open/shinipsum/blob/master/R/Table.R'><code>R/Table.R</code></a></small>
-    <div class="hidden name"><code>random_table.Rd</code></div>
+    <h1>A Random Linear Model</h1>
+    <small class="dont-index">Source: <a href='https://github.com/Thinkr-open/shinipsum/blob/master/R/LinearModel.R'><code>R/LinearModel.R</code></a></small>
+    <div class="hidden name"><code>random_lm.Rd</code></div>
     </div>
 
     <div class="ref-description">
-    <p>This function returns a table that can be passed to <code>renderTable</code> and <code>tableOutput</code>.</p>
+    <p>This function returns a model which can be passed to renderText or renderTable if pre-processed appropriately</p>
     </div>
 
-    <pre class="usage"><span class='fu'>random_table</span><span class='op'>(</span><span class='va'>nrow</span>, <span class='va'>ncol</span>, type <span class='op'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span><span class='op'>(</span><span class='st'>"random"</span>, <span class='st'>"numeric"</span>, <span class='st'>"character"</span>, <span class='st'>"numchar"</span><span class='op'>)</span><span class='op'>)</span></pre>
+    <pre class="usage"><span class='fu'>random_lm</span><span class='op'>(</span>nobs <span class='op'>=</span> <span class='fl'>100</span>, nx <span class='op'>=</span> <span class='fl'>2</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
-      <th>nrow</th>
-      <td><p>number of row of the output</p></td>
+      <th>nobs</th>
+      <td><p>Numeric. number of observation</p></td>
     </tr>
     <tr>
-      <th>ncol</th>
-      <td><p>number of cols of the output</p></td>
-    </tr>
-    <tr>
-      <th>type</th>
-      <td><p>type of the columns, can be "random", "numeric", "character", "numchar". Default is random.</p></td>
+      <th>nx</th>
+      <td><p>Numeric. number of variables. Should be lower that nobs</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>a table</p>
+    <p>a model output</p>
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">

@@ -75,7 +75,7 @@
 
   </head>
 
-  <body>
+  <body data-spy="scroll" data-target="#toc">
     <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
@@ -140,7 +140,7 @@
     <p>Get a shinipsum example</p>
     </div>
 
-    <pre class="usage"><span class='fu'>ipsum_examples</span>(<span class='kw'>which</span> <span class='kw'>=</span> <span class='kw'>NULL</span>)</pre>
+    <pre class="usage"><span class='fu'>ipsum_examples</span><span class='op'>(</span>which <span class='op'>=</span> <span class='cn'>NULL</span><span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -156,7 +156,8 @@
     <p>A path to the example.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'>ipsum_examples</span>()</div><div class='output co'>#&gt; [1] "01_navbar.R"</div></pre>
+    <pre class="examples"><div class='input'><span class='fu'>ipsum_examples</span><span class='op'>(</span><span class='op'>)</span>
+</div><div class='output co'>#&gt; [1] "01_navbar.R"</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">

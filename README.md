@@ -118,12 +118,19 @@ random_dygraph()  %>%
 
 ### Text
 
-`random_text` takes one of these two args :
+`random_text` takes one of these two args:
 
-  - `nchar` : lorem ipsum of `nchar` characters
-  - `nwords` : lorem ipsum of `nwords` characters
+  - `nchar`: lorem ipsum of `nchar` characters
+  - `nwords`: lorem ipsum of `nwords` characters
 
 One of the two should be left `NULL`
+
+### Lm
+
+`random_lm` returns a random `lm` model output:
+
+  - `nobs`: Number of observations
+  - `nx`: Number of variables (should be lower than `nobs`)
 
 ## Example
 

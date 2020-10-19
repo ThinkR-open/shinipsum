@@ -14,15 +14,11 @@ knitr::opts_chunk$set(
 ```
 
 <!-- badges: start -->
-
-[![Travis build status](https://travis-ci.org/ThinkR-open/shinipsum.svg?branch=master)](https://travis-ci.org/ThinkR-open/shinipsum)
-[![AppVeyor build status](https://ci.appveyor.com/api/projects/status/github/ThinkR-open/shinipsum?branch=master&svg=true)](https://ci.appveyor.com/project/ThinkR-open/shinipsum)
+[![R build status](https://github.com/ThinkR-open/shinipsum/workflows/R-CMD-check/badge.svg)](https://github.com/ThinkR-open/shinipsum/actions)
 [![Codecov test coverage](https://codecov.io/gh/ThinkR-open/shinipsum/branch/master/graph/badge.svg)](https://codecov.io/gh/ThinkR-open/shinipsum?branch=master)
 <!-- badges: end -->
 
-<img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" width=250px>
-
-# shinipsum
+# shinipsum <img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" align="right" alt="" width="120" />
 
 The goal of {shinipsum} is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.
 

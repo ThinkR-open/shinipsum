@@ -122,8 +122,7 @@ random_dygraph()  %>%
 
   - `nchar`: lorem ipsum of `nchar` characters
   - `nwords`: lorem ipsum of `nwords` characters
-
-One of the two should be left `NULL`
+  - `offset`: number of characters or words to offset the result by
 
 ### Lm
 

@@ -16,26 +16,52 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 [![R build status](https://github.com/ThinkR-open/shinipsum/workflows/R-CMD-check/badge.svg)](https://github.com/ThinkR-open/shinipsum/actions)
 [![Codecov test coverage](https://codecov.io/gh/ThinkR-open/shinipsum/branch/master/graph/badge.svg)](https://codecov.io/gh/ThinkR-open/shinipsum?branch=master)
+[![R-CMD-check](https://github.com/ThinkR-open/shinipsum/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ThinkR-open/shinipsum/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 # shinipsum <img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" align="right" alt="" width="120" />
 
-The goal of {shinipsum} is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.
+The goal of `{shinipsum} `is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.
 
 
-The full documentation is in the {pkgdown} site: <https://thinkr-open.github.io/shinipsum/>
+The full documentation can be found on the `{pkgdown} `site: <https://thinkr-open.github.io/shinipsum/>
 
 ## Installation
 
 You can install the dev version of shinipsum from GitHub with:
 
 ``` r
-remotes::install_github("Thinkr-open/shinipsum")
+install.packages("shinipsum")
 ```
 
-## Demo 
+## About
 
-Available examples: 
+You're reading the doc about version : `r pkgload::pkg_version()`
+
+This README has been compiled on the
+
+```{r}
+Sys.time()
+```
+
+Here are the test & coverage results :
+
+```{r}
+devtools::check(quiet = TRUE)
+```
+
+```{r echo = FALSE}
+unloadNamespace("shinipsum")
+```
+
+```{r}
+covr::package_coverage()
+```
+
+
+## Demo
+
+Available examples:
 
 ```{r}
 library(shinipsum)
@@ -43,7 +69,7 @@ ipsum_examples()
 ```
 
 
-You can run `{shinipsum}` demos with: 
+You can run `{shinipsum}` demos with:
 
 ```{r eval = FALSE}
 shiny::runApp(
@@ -51,13 +77,13 @@ shiny::runApp(
 )
 ```
 
-## Available ipsums : 
+## Available ipsums :
 
 > Note: {shinipsum} only load functions which are necessary to its internal job. If you want to customise an output or to use a renderXX / XXOutput, you'll need to **explicitely** load the packages needed (for example, if you want to customise a dygraph, a ggplot, or use ggplotly).
 
-### DataTable 
+### DataTable
 
-`random_DT` takes 4 args : 
+`random_DT` takes 4 args :
 
 + `nrow` & `ncol`: number of row and columns of the table
 + `type` : random, numeric, character, numchar - the type of the columns
@@ -69,7 +95,7 @@ shiny::runApp(
 
 ### Plot
 
-`random_ggplot` takes one arg : 
+`random_ggplot` takes one arg :
 
 + `type` : Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin" and defines the geom of the ggplot. Default is "random", and chooses a random geom for you.
 
@@ -79,42 +105,42 @@ As the return object is a `ggplot`, it can be enhanced like any other ggplot wit
 
 ```{r eval = FALSE}
 library(ggplot2)
-random_ggplot(type = "col") + 
-  labs(title = "Random plot") + 
+random_ggplot(type = "col") +
+  labs(title = "Random plot") +
   theme_bw()
 ```
 
-`random_ggplotly` calls the `ggplotly` function on a `random_ggplot`.  
+`random_ggplotly` calls the `ggplotly` function on a `random_ggplot`.
 
 ### Dygraph
 
-`random_dygraph` returns a random dygprah. It takes one arg: 
+`random_dygraph` returns a random dygprah. It takes one arg:
 
-+ `...`: arguments which are passed to the `dygraph()` function. 
++ `...`: arguments which are passed to the `dygraph()` function.
 
 As the return object is a `dygraph`, it can be enhanced like any other dygraph.
 
 ```{r eval = FALSE}
 library(dygraphs)
-random_dygraph()  %>% 
+random_dygraph()  %>%
   dyRangeSelector()
 ```
 
 
-### Print 
+### Print
 
-`random_print` takes one arg: 
+`random_print` takes one arg:
 
 + `type`: can be any of `"character", "numeric", "model", "table"`, and defines the type of print. Default is `"character"`.
 
 
-### Table 
+### Table
 
-`random_table` takes three args : `nrow`, `ncols` and `type`. See `random_DT`. 
+`random_table` takes three args : `nrow`, `ncols` and `type`. See `random_DT`.
 
-### Text 
+### Text
 
-`random_text` takes one of these two args: 
+`random_text` takes one of these two args:
 
 + `nchar`: lorem ipsum of `nchar` characters
 + `nwords`: lorem ipsum of `nwords` characters

@@ -1,48 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//index.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/404.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/ipsum_examples.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/lorem.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/lorem_words.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/pipe.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/authors.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_DT.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/index.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_dygraph.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/news/index.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_ggplot.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_ggplotly.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/ipsum_examples.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_image.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/lorem.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_lm.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/lorem_words.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_print.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/pipe.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_table.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_DT.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/random_text.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_dygraph.html</loc>
   </url>
   <url>
-    <loc>https://thinkr-open.github.io/shinipsum//reference/shinipsum-package.html</loc>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_ggplot.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_ggplotly.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_image.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_lm.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_print.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_table.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/random_text.html</loc>
+  </url>
+  <url>
+    <loc>https://thinkr-open.github.io/shinipsum/reference/shinipsum-package.html</loc>
   </url>
 </urlset>

@@ -38,6 +38,8 @@
 -->
 </head>
 <body data-spy="scroll" data-target="#toc">
+    
+
     <div class="container template-home">
       <header><div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -50,18 +52,12 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">shinipsum</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.0.0.9000</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="">0.0.0.9000</span>
       </span>
     </div>
 
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-<li>
-  <a href="index.html">
-    <span class="fas fa fas fa-home fa-lg"></span>
-     
-  </a>
-</li>
 <li>
   <a href="reference/index.html">Reference</a>
 </li>
@@ -79,8 +75,8 @@
 </div>
         </li>
         <li>
-  <a href="https://github.com/Thinkr-open/shinipsum/">
-    <span class="fab fa fab fa-github fa-lg"></span>
+  <a href="https://github.com/Thinkr-open/shinipsum/" class="external-link">
+    <span class="fab fa-github fa-lg"></span>
      
   </a>
 </li>
@@ -98,42 +94,79 @@
   <div class="contents col-md-9">
 
 
-<div id="shinipsum-" class="section level1">
-<div class="page-header"><h1 class="hasAnchor">
-<a href="#shinipsum-" class="anchor"></a>shinipsum <img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" align="right" alt="" width="120">
+<div class="section level1">
+<div class="page-header"><h1 id="shinipsum-">shinipsum <img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/thinkr-hex-shinipsum.png" align="right" alt="" width="120"><a class="anchor" aria-label="anchor" href="#shinipsum-"></a>
 </h1></div>
-<p>The goal of {shinipsum} is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.</p>
-<p>The full documentation is in the {pkgdown} site: <a href="https://thinkr-open.github.io/shinipsum/" class="uri">https://thinkr-open.github.io/shinipsum/</a></p>
-<div id="installation" class="section level2">
-<h2 class="hasAnchor">
-<a href="#installation" class="anchor"></a>Installation</h2>
+<p>The goal of <a href="https://github.com/Thinkr-open/shinipsum" class="external-link">shinipsum</a>is to provide random shiny elements for easiest shiny app prototyping, so that you can focus on building the frontend before building the backend.</p>
+<p>The full documentation can be found on the <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>site: <a href="https://thinkr-open.github.io/shinipsum/" class="uri">https://thinkr-open.github.io/shinipsum/</a></p>
+<div class="section level2">
+<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+</h2>
 <p>You can install the dev version of shinipsum from GitHub with:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit">
-<span class="fu">remotes</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span><span class="op">(</span><span class="st">"Thinkr-open/shinipsum"</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"shinipsum"</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="demo" class="section level2">
-<h2 class="hasAnchor">
-<a href="#demo" class="anchor"></a>Demo</h2>
+<div class="section level2">
+<h2 id="about">About<a class="anchor" aria-label="anchor" href="#about"></a>
+</h2>
+<p>You’re reading the doc about version : 0.0.0.9000</p>
+<p>This README has been compiled on the</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html" class="external-link">Sys.time</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "2023-03-27 11:19:38 CEST"</span></span></code></pre></div>
+<p>Here are the test &amp; coverage results :</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">check</span><span class="op">(</span>quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<span><span class="co">#&gt; ══ Documenting ═════════════════════════════════════════════════════════════════</span></span>
+<span><span class="co">#&gt; ℹ Installed roxygen2 version (7.2.3) doesn't match required (7.1.1)</span></span>
+<span><span class="co">#&gt; ✖ `check()` will not re-document this package</span></span>
+<span><span class="co">#&gt; ── R CMD check results ─────────────────────────────── shinipsum 0.0.0.9000 ────</span></span>
+<span><span class="co">#&gt; Duration: 18.4s</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking top-level files ... NOTE</span></span>
+<span><span class="co">#&gt;   Non-standard file/directory found at top level:</span></span>
+<span><span class="co">#&gt;     ‘README.html’</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; ❯ checking dependencies in R code ... NOTE</span></span>
+<span><span class="co">#&gt;   Namespace in Imports field not imported from: ‘utils’</span></span>
+<span><span class="co">#&gt;     All declared Imports should be used.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; 0 errors ✔ | 0 warnings ✔ | 2 notes ✖</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">covr</span><span class="fu">::</span><span class="fu">package_coverage</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; shinipsum Coverage: 97.91%</span></span>
+<span><span class="co">#&gt; R/example.R: 44.44%</span></span>
+<span><span class="co">#&gt; R/Table.R: 96.97%</span></span>
+<span><span class="co">#&gt; R/Plot.R: 99.29%</span></span>
+<span><span class="co">#&gt; R/DataTable.R: 100.00%</span></span>
+<span><span class="co">#&gt; R/dygraphs.R: 100.00%</span></span>
+<span><span class="co">#&gt; R/Image.R: 100.00%</span></span>
+<span><span class="co">#&gt; R/LinearModel.R: 100.00%</span></span>
+<span><span class="co">#&gt; R/Print.R: 100.00%</span></span>
+<span><span class="co">#&gt; R/Text.R: 100.00%</span></span>
+<span><span class="co">#&gt; R/utils.R: 100.00%</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="demo">Demo<a class="anchor" aria-label="anchor" href="#demo"></a>
+</h2>
 <p>Available examples:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/shinipsum">shinipsum</a></span><span class="op">)</span>
-<span class="fu"><a href="reference/ipsum_examples.html">ipsum_examples</a></span><span class="op">(</span><span class="op">)</span>
-<span class="co">#&gt; [1] "01_navbar.R"</span></pre></div>
-<p>You can run <a href="https://github.com/Thinkr-open/shinipsum">shinipsum</a> demos with:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit">
-<span class="fu">shiny</span><span class="fu">::</span><span class="fu">runApp</span><span class="op">(</span>
-  <span class="fu"><a href="reference/ipsum_examples.html">ipsum_examples</a></span><span class="op">(</span><span class="st">"01_navbar.R"</span><span class="op">)</span>
-<span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/shinipsum" class="external-link">shinipsum</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/ipsum_examples.html">ipsum_examples</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "01_navbar.R"</span></span></code></pre></div>
+<p>You can run <a href="https://github.com/Thinkr-open/shinipsum" class="external-link">shinipsum</a> demos with:</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">shiny</span><span class="fu">::</span><span class="fu">runApp</span><span class="op">(</span></span>
+<span>  <span class="fu"><a href="reference/ipsum_examples.html">ipsum_examples</a></span><span class="op">(</span><span class="st">"01_navbar.R"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="available-ipsums-" class="section level2">
-<h2 class="hasAnchor">
-<a href="#available-ipsums-" class="anchor"></a>Available ipsums :</h2>
-<blockquote>
-<p>Note: {shinipsum} only load functions which are necessary to its internal job. If you want to customise an output or to use a renderXX / XXOutput, you’ll need to <strong>explicitely</strong> load the packages needed (for example, if you want to customise a dygraph, a ggplot, or use ggplotly).</p>
-</blockquote>
-<div id="datatable" class="section level3">
-<h3 class="hasAnchor">
-<a href="#datatable" class="anchor"></a>DataTable</h3>
+<div class="section level2">
+<h2 id="available-ipsums-">Available ipsums :<a class="anchor" aria-label="anchor" href="#available-ipsums-"></a>
+</h2>
+<blockquote><p>Note: {shinipsum} only load functions which are necessary to its internal job. If you want to customise an output or to use a renderXX / XXOutput, you’ll need to <strong>explicitely</strong> load the packages needed (for example, if you want to customise a dygraph, a ggplot, or use ggplotly).</p></blockquote>
+<div class="section level3">
+<h3 id="datatable">DataTable<a class="anchor" aria-label="anchor" href="#datatable"></a>
+</h3>
 <p><code>random_DT</code> takes 4 args :</p>
 <ul>
 <li>
@@ -141,63 +174,57 @@
 <li>
 <code>type</code> : random, numeric, character, numchar - the type of the columns</li>
 <li>
-<code>...</code> : args to be passed to <code><a href="https://rdrr.io/pkg/DT/man/datatable.html">DT::datatable</a></code>
+<code>...</code> : args to be passed to <code><a href="https://rdrr.io/pkg/DT/man/datatable.html" class="external-link">DT::datatable</a></code>
 </li>
 </ul>
 </div>
-<div id="image" class="section level3">
-<h3 class="hasAnchor">
-<a href="#image" class="anchor"></a>Image</h3>
+<div class="section level3">
+<h3 id="image">Image<a class="anchor" aria-label="anchor" href="#image"></a>
+</h3>
 <p><code>random_image</code> returns a random image.</p>
 </div>
-<div id="plot" class="section level3">
-<h3 class="hasAnchor">
-<a href="#plot" class="anchor"></a>Plot</h3>
+<div class="section level3">
+<h3 id="plot">Plot<a class="anchor" aria-label="anchor" href="#plot"></a>
+</h3>
 <p><code>random_ggplot</code> takes one arg :</p>
-<ul>
-<li>
-<code>type</code> : Can be any of “random”, “point”, “bar”, “boxplot”,“col”, “tile”, “line”, “bin2d”, “contour”, “density”, “density_2d”, “dotplot”, “hex”, “freqpoly”, “histogram”, “ribbon”, “raster”, “tile”, “violin” and defines the geom of the ggplot. Default is “random”, and chooses a random geom for you.</li>
-</ul>
+<ul><li>
+<code>type</code> : Can be any of “random”, “point”, “bar”, “boxplot”,“col”, “tile”, “line”, “bin2d”, “contour”, “density”, “density_2d”, “dotplot”, “hex”, “freqpoly”, “histogram”, “ribbon”, “raster”, “tile”, “violin” and defines the geom of the ggplot. Default is “random”, and chooses a random geom for you.</li></ul>
 <p>Default theme is minimal.</p>
-<p>As the return object is a <code>ggplot</code>, it can be enhanced like any other ggplot with <code><a href="https://rdrr.io/r/base/Arithmetic.html">+</a></code>.</p>
-<div class="sourceCode" id="cb4"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="http://ggplot2.tidyverse.org">ggplot2</a></span><span class="op">)</span>
-<span class="fu"><a href="reference/random_ggplot.html">random_ggplot</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"col"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Random plot"</span><span class="op">)</span> <span class="op">+</span> 
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_bw</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<p>As the return object is a <code>ggplot</code>, it can be enhanced like any other ggplot with <code>+</code>.</p>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/random_ggplot.html">random_ggplot</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"col"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Random plot"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html" class="external-link">theme_bw</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p><code>random_ggplotly</code> calls the <code>ggplotly</code> function on a <code>random_ggplot</code>.</p>
 </div>
-<div id="dygraph" class="section level3">
-<h3 class="hasAnchor">
-<a href="#dygraph" class="anchor"></a>Dygraph</h3>
+<div class="section level3">
+<h3 id="dygraph">Dygraph<a class="anchor" aria-label="anchor" href="#dygraph"></a>
+</h3>
 <p><code>random_dygraph</code> returns a random dygprah. It takes one arg:</p>
-<ul>
-<li>
-<code>...</code>: arguments which are passed to the <code><a href="https://rdrr.io/pkg/dygraphs/man/dygraph.html">dygraph()</a></code> function.</li>
-</ul>
+<ul><li>
+<code>...</code>: arguments which are passed to the <code><a href="https://rdrr.io/pkg/dygraphs/man/dygraph.html" class="external-link">dygraph()</a></code> function.</li></ul>
 <p>As the return object is a <code>dygraph</code>, it can be enhanced like any other dygraph.</p>
-<div class="sourceCode" id="cb5"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/dygraphs">dygraphs</a></span><span class="op">)</span>
-<span class="fu"><a href="reference/random_dygraph.html">random_dygraph</a></span><span class="op">(</span><span class="op">)</span>  <span class="op">%&gt;%</span> 
-  <span class="fu"><a href="https://rdrr.io/pkg/dygraphs/man/dyRangeSelector.html">dyRangeSelector</a></span><span class="op">(</span><span class="op">)</span></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/dygraphs" class="external-link">dygraphs</a></span><span class="op">)</span></span>
+<span><span class="fu"><a href="reference/random_dygraph.html">random_dygraph</a></span><span class="op">(</span><span class="op">)</span>  <span class="op"><a href="reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/dygraphs/man/dyRangeSelector.html" class="external-link">dyRangeSelector</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
-<div id="print" class="section level3">
-<h3 class="hasAnchor">
-<a href="#print" class="anchor"></a>Print</h3>
+<div class="section level3">
+<h3 id="print">Print<a class="anchor" aria-label="anchor" href="#print"></a>
+</h3>
 <p><code>random_print</code> takes one arg:</p>
-<ul>
-<li>
-<code>type</code>: can be any of <code>"character", "numeric", "model", "table"</code>, and defines the type of print. Default is <code>"character"</code>.</li>
-</ul>
+<ul><li>
+<code>type</code>: can be any of <code>"character", "numeric", "model", "table"</code>, and defines the type of print. Default is <code>"character"</code>.</li></ul>
 </div>
-<div id="table" class="section level3">
-<h3 class="hasAnchor">
-<a href="#table" class="anchor"></a>Table</h3>
+<div class="section level3">
+<h3 id="table">Table<a class="anchor" aria-label="anchor" href="#table"></a>
+</h3>
 <p><code>random_table</code> takes three args : <code>nrow</code>, <code>ncols</code> and <code>type</code>. See <code>random_DT</code>.</p>
 </div>
-<div id="text" class="section level3">
-<h3 class="hasAnchor">
-<a href="#text" class="anchor"></a>Text</h3>
+<div class="section level3">
+<h3 id="text">Text<a class="anchor" aria-label="anchor" href="#text"></a>
+</h3>
 <p><code>random_text</code> takes one of these two args:</p>
 <ul>
 <li>
@@ -208,9 +235,9 @@
 <code>offset</code>: number of characters or words to offset the result by</li>
 </ul>
 </div>
-<div id="lm" class="section level3">
-<h3 class="hasAnchor">
-<a href="#lm" class="anchor"></a>Lm</h3>
+<div class="section level3">
+<h3 id="lm">Lm<a class="anchor" aria-label="anchor" href="#lm"></a>
+</h3>
 <p><code>random_lm</code> returns a random <code>lm</code> model output:</p>
 <ul>
 <li>
@@ -220,50 +247,50 @@
 </ul>
 </div>
 </div>
-<div id="example" class="section level2">
-<h2 class="hasAnchor">
-<a href="#example" class="anchor"></a>Example</h2>
-<p>Here is an example of using <a href="https://github.com/Thinkr-open/shinipsum">shinipsum</a> to generate a random app:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">shiny</span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/shinipsum">shinipsum</a></span><span class="op">)</span>
-<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT">DT</a></span><span class="op">)</span>
-<span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span>
-  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random DT"</span><span class="op">)</span>,
-  <span class="fu"><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">DTOutput</a></span><span class="op">(</span><span class="st">"data_table"</span><span class="op">)</span>,
-  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Image"</span><span class="op">)</span>,
-  <span class="fu">plotOutput</span><span class="op">(</span><span class="st">"image"</span>, height <span class="op">=</span> <span class="st">"300px"</span><span class="op">)</span>,
-  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Plot"</span><span class="op">)</span>,
-  <span class="fu">plotOutput</span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>,
-  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Print"</span><span class="op">)</span>,
-  <span class="fu">verbatimTextOutput</span><span class="op">(</span><span class="st">"print"</span><span class="op">)</span>,
-  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Table"</span><span class="op">)</span>,
-  <span class="fu">tableOutput</span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span>,
-  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Text"</span><span class="op">)</span>,
-  <span class="fu">tableOutput</span><span class="op">(</span><span class="st">"text"</span><span class="op">)</span>
-<span class="op">)</span>
-
-<span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span>
-  <span class="va">output</span><span class="op">$</span><span class="va">data_table</span> <span class="op">&lt;-</span> <span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html">renderDT</a></span><span class="op">(</span><span class="op">{</span>
-    <span class="fu"><a href="reference/random_DT.html">random_DT</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
-  <span class="va">output</span><span class="op">$</span><span class="va">image</span> <span class="op">&lt;-</span> <span class="fu">renderImage</span><span class="op">(</span><span class="op">{</span>
-    <span class="fu"><a href="reference/random_image.html">random_image</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
-  <span class="va">output</span><span class="op">$</span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu">renderPlot</span><span class="op">(</span><span class="op">{</span>
-    <span class="fu"><a href="reference/random_ggplot.html">random_ggplot</a></span><span class="op">(</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
-  <span class="va">output</span><span class="op">$</span><span class="va">print</span> <span class="op">&lt;-</span> <span class="fu">renderPrint</span><span class="op">(</span><span class="op">{</span>
-    <span class="fu"><a href="reference/random_print.html">random_print</a></span><span class="op">(</span><span class="st">"model"</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
-  <span class="va">output</span><span class="op">$</span><span class="va">table</span> <span class="op">&lt;-</span> <span class="fu">renderTable</span><span class="op">(</span><span class="op">{</span>
-    <span class="fu"><a href="reference/random_table.html">random_table</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
-  <span class="va">output</span><span class="op">$</span><span class="va">text</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span>
-    <span class="fu"><a href="reference/random_text.html">random_text</a></span><span class="op">(</span>nwords <span class="op">=</span> <span class="fl">50</span><span class="op">)</span>
-  <span class="op">}</span><span class="op">)</span>
-<span class="op">}</span>
-<span class="fu">shinyApp</span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></pre></div>
+<div class="section level2">
+<h2 id="example">Example<a class="anchor" aria-label="anchor" href="#example"></a>
+</h2>
+<p>Here is an example of using <a href="https://github.com/Thinkr-open/shinipsum" class="external-link">shinipsum</a> to generate a random app:</p>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://shiny.rstudio.com/" class="external-link">shiny</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/Thinkr-open/shinipsum" class="external-link">shinipsum</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/rstudio/DT" class="external-link">DT</a></span><span class="op">)</span></span>
+<span><span class="va">ui</span> <span class="op">&lt;-</span> <span class="fu">fluidPage</span><span class="op">(</span></span>
+<span>  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random DT"</span><span class="op">)</span>,</span>
+<span>  <span class="fu"><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html" class="external-link">DTOutput</a></span><span class="op">(</span><span class="st">"data_table"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Image"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">plotOutput</span><span class="op">(</span><span class="st">"image"</span>, height <span class="op">=</span> <span class="st">"300px"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Plot"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">plotOutput</span><span class="op">(</span><span class="st">"plot"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Print"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">verbatimTextOutput</span><span class="op">(</span><span class="st">"print"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Table"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">tableOutput</span><span class="op">(</span><span class="st">"table"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">h2</span><span class="op">(</span><span class="st">"A Random Text"</span><span class="op">)</span>,</span>
+<span>  <span class="fu">tableOutput</span><span class="op">(</span><span class="st">"text"</span><span class="op">)</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">server</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">input</span>, <span class="va">output</span>, <span class="va">session</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">data_table</span> <span class="op">&lt;-</span> <span class="fu">DT</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/DT/man/dataTableOutput.html" class="external-link">renderDT</a></span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="reference/random_DT.html">random_DT</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">image</span> <span class="op">&lt;-</span> <span class="fu">renderImage</span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="reference/random_image.html">random_image</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">plot</span> <span class="op">&lt;-</span> <span class="fu">renderPlot</span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="reference/random_ggplot.html">random_ggplot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">print</span> <span class="op">&lt;-</span> <span class="fu">renderPrint</span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="reference/random_print.html">random_print</a></span><span class="op">(</span><span class="st">"model"</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">table</span> <span class="op">&lt;-</span> <span class="fu">renderTable</span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="reference/random_table.html">random_table</a></span><span class="op">(</span><span class="fl">10</span>, <span class="fl">5</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span>  <span class="va">output</span><span class="op">$</span><span class="va">text</span> <span class="op">&lt;-</span> <span class="fu">renderText</span><span class="op">(</span><span class="op">{</span></span>
+<span>    <span class="fu"><a href="reference/random_text.html">random_text</a></span><span class="op">(</span>nwords <span class="op">=</span> <span class="fl">50</span><span class="op">)</span></span>
+<span>  <span class="op">}</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="fu">shinyApp</span><span class="op">(</span><span class="va">ui</span>, <span class="va">server</span><span class="op">)</span></span></code></pre></div>
 <p><img src="https://raw.githubusercontent.com/ThinkR-open/shinipsum/master/img/shinipsum.png"></p>
 <p>Please note that the ‘shinipsum’ project is released with a <a href="CODE_OF_CONDUCT.html">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
 </div>
@@ -273,57 +300,67 @@
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <div class="links">
-<h2>Links</h2>
+<h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
-<li>Download from CRAN at <br><a href="https://cloud.r-project.org/package=shinipsum">https://​cloud.r-project.org/​package=shinipsum</a>
-</li>
-<li>Browse source code at <br><a href="https://github.com/Thinkr-open/shinipsum/">https://​github.com/​Thinkr-open/​shinipsum/​</a>
-</li>
-<li>Report a bug at <br><a href="https://github.com/Thinkr-open/shinipsum/issues">https://​github.com/​Thinkr-open/​shinipsum/​issues</a>
-</li>
+<li><a href="https://cloud.r-project.org/package=shinipsum" class="external-link">View on CRAN</a></li>
+<li><a href="https://github.com/Thinkr-open/shinipsum/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/Thinkr-open/shinipsum/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
+
 <div class="license">
-<h2>License</h2>
+<h2 data-toc-skip>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
-<li><small><a href="https://opensource.org/licenses/mit-license.php">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
+<li><small><a href="https://opensource.org/licenses/mit-license.php" class="external-link">MIT</a> + file <a href="LICENSE-text.html">LICENSE</a></small></li>
 </ul>
 </div>
+
 <div class="community">
-<h2>Community</h2>
+<h2 data-toc-skip>Community</h2>
 <ul class="list-unstyled">
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
 </ul>
 </div>
-<div class="developers">
-<h2>Developers</h2>
+
+<div class="citation">
+<h2 data-toc-skip>Citation</h2>
 <ul class="list-unstyled">
-<li>Colin Fay <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0001-7343-1846" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
-<li>Sebastien Rochette <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1565-9313" target="orcid.widget" aria-label="ORCID"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li><a href="authors.html#citation">Citing shinipsum</a></li>
+</ul>
+</div>
+
+<div class="developers">
+<h2 data-toc-skip>Developers</h2>
+<ul class="list-unstyled">
+<li>Colin Fay <br><small class="roles"> Maintainer, author </small> <a href="https://orcid.org/0000-0001-7343-1846" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
+<li>Sebastien Rochette <br><small class="roles"> Author </small> <a href="https://orcid.org/0000-0002-1565-9313" target="orcid.widget" aria-label="ORCID" class="external-link"><span class="fab fa-orcid orcid" aria-hidden="true"></span></a> </li>
 <li>ThinkR <br><small class="roles"> Copyright holder, funder </small>  </li>
 </ul>
 </div>
 
-  <div class="dev-status">
-<h2>Dev status</h2>
+<div class="dev-status">
+<h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/ThinkR-open/shinipsum/actions"><img src="https://github.com/ThinkR-open/shinipsum/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
-<li><a href="https://codecov.io/gh/ThinkR-open/shinipsum?branch=master"><img src="https://codecov.io/gh/ThinkR-open/shinipsum/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/ThinkR-open/shinipsum/actions" class="external-link"><img src="https://github.com/ThinkR-open/shinipsum/workflows/R-CMD-check/badge.svg" alt="R build status"></a></li>
+<li><a href="https://codecov.io/gh/ThinkR-open/shinipsum?branch=master" class="external-link"><img src="https://codecov.io/gh/ThinkR-open/shinipsum/branch/master/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://github.com/ThinkR-open/shinipsum/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/ThinkR-open/shinipsum/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
 </ul>
 </div>
-</div>
+
+  </div>
 </div>
 
 
       <footer><div class="thinkr">
-  <p>shinipsum is a  <strong>ThinkR</strong> package. Learn more at <a href="https://rtask.thinkr.fr">rtask.thinkr.fr</a>.</p>
+  <p></p>
+<p>Developed by Colin Fay, Sebastien Rochette, ThinkR.</p>,<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.</p>
 </div>
 
 <div class="author">
   <p>
-    Developed by Colin Fay, Sebastien Rochette, ThinkR.
-    Site built by <a href="https://pkgdown.r-lib.org">pkgdown</a>.
+    Developed by .
+    Site built by <a href="https://pkgdown.r-lib.org" class="external-link">pkgdown</a>.
   </p>
 </div>
 
@@ -332,6 +369,8 @@
 
   
 
+
+  
 
   </body>
 </html>

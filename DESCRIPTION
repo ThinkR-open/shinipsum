@@ -30,7 +30,9 @@ Imports:
     magrittr,
     plotly,
     stats,
-    utils
+    utils,
+    glue,
+    htmltools
 Suggests: 
     testthat
 Encoding: UTF-8

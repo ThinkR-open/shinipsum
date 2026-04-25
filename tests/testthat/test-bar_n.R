@@ -11,9 +11,18 @@ test_that("random_ggplot('bar', n_bars=) produces exactly n bars (#5)", {
 })
 
 test_that("random_ggplot('bar') without n_bars keeps the legacy datasets behaviour", {
-  withr::with_seed(1, {
-    p <- random_ggplot("bar")
-  })
+  old_seed <- if (exists(".Random.seed", envir = .GlobalEnv, inherits = FALSE)) {
+    get(".Random.seed", envir = .GlobalEnv)
+  } else NULL
+  on.exit(
+    if (!is.null(old_seed)) assign(".Random.seed", old_seed, envir = .GlobalEnv)
+    else if (exists(".Random.seed", envir = .GlobalEnv, inherits = FALSE)) {
+      rm(list = ".Random.seed", envir = .GlobalEnv)
+    },
+    add = TRUE
+  )
+  set.seed(1)
+  p <- random_ggplot("bar")
   expect_s3_class(p, "ggplot")
 })
 

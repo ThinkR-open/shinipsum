@@ -4,10 +4,20 @@
 \alias{random_image}
 \title{A Random Image}
 \usage{
-random_image()
+random_image(width = NULL, height = NULL, alt = NULL)
+}
+\arguments{
+\item{width}{image width passed through to the rendered \verb{<img>} tag.
+\code{NULL} (default) leaves the attribute unset (#9).}
+
+\item{height}{image height, same semantics as \code{width} (#9).}
+
+\item{alt}{\code{alt} attribute for accessibility. \code{NULL} (default) leaves
+the attribute unset (#9).}
 }
 \value{
-an image
+a list compatible with \code{shiny::renderImage()}: \code{src}, plus the
+\code{width} / \code{height} / \code{alt} attributes when provided.
 }
 \description{
 This function returns a random image that can be passed into \code{renderImage} and \code{plotOutput}.

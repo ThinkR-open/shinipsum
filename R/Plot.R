@@ -1,8 +1,21 @@
+#' Build the categorical labels used by random_ggplot('bar', n_bars=).
+#' @noRd
+make_bar_labels <- function(n) {
+  if (n <= 26L) {
+    LETTERS[seq_len(n)]
+  } else {
+    sprintf("Cat%02d", seq_len(n))
+  }
+}
+
 #' A Random ggplot
 #'
 #' This function returns a ggplot object, which can be passed to `renderPlot` and `plotOutput`
 #'
 #' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin" and defines the geom of the ggplot. Default is "random", and chooses a random geom for you.
+#' @param n_bars integer, number of bars to draw when `type == "bar"`. When
+#'   `NULL` (default), one of the built-in datasets is sampled; otherwise
+#'   a synthetic data frame with `n_bars` categories is used (#5).
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line facet_grid geom_col scale_fill_viridis_c
 #' @importFrom ggplot2 xlim ylim geom_bin2d geom_contour geom_density geom_density_2d geom_dotplot
@@ -18,7 +31,8 @@ random_ggplot <- function(type = c("random", "point", "bar",
                                    "density", "density_2d", "dotplot",
                                    "hex", "freqpoly", "histogram",
                                    "ribbon", "raster", "tile",
-                                   "violin")) {
+                                   "violin"),
+                          n_bars = NULL) {
   type_matched <- match.arg(type)
 
   if (type_matched == "random") {
@@ -26,6 +40,27 @@ random_ggplot <- function(type = c("random", "point", "bar",
     # Removed random from the formals match
     form <- form[ - which(form == "random") ]
     type_matched <- sample( form, 1 )
+  }
+
+  # User asked for a specific number of bars -> short-circuit the
+  # builtin-dataset switch with synthetic data so we hit exactly n_bars (#5).
+  if (type_matched == "bar" && !is.null(n_bars)) {
+    stopifnot(is.numeric(n_bars), length(n_bars) == 1L,
+              !is.na(n_bars), n_bars >= 1L)
+    n_bars <- as.integer(n_bars)
+    df <- data.frame(
+      category = factor(make_bar_labels(n_bars),
+                        levels = make_bar_labels(n_bars)),
+      value = sample.int(100L, n_bars, replace = TRUE)
+    )
+    return(
+      ggplot2::ggplot(df) +
+        ggplot2::aes(category, value, fill = category) +
+        ggplot2::geom_col() +
+        ggplot2::scale_fill_viridis_d() +
+        ggplot2::theme_minimal() +
+        ggplot2::theme(legend.position = "none")
+    )
   }
 
   r <- switch(as.character(type_matched),
@@ -144,7 +179,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
     "50" = list(
       ggplot(datasets::women) +
         aes(height, weight) +
-        geom_line(size = 2) +
+        geom_line(linewidth = 2) +
         theme_minimal()
     ),
     "51" = list(

@@ -13,7 +13,9 @@ utils::globalVariables(unique(c(
   "x", "y",
   "depth", "cut", "carat", "price", "color",
   "year", "level",
-  "z", "w"
+  "z", "w",
+  # random_ggplot('bar', n_bars=)
+  "category", "value"
 
   # random dygraphs
   # @importFrom datasets mdeaths fdeaths ldeaths nhtemp AirPassengers discoveries presidents austres

@@ -4,7 +4,7 @@
 \alias{random_text}
 \title{A Random Lorem Ipsum}
 \usage{
-random_text(nchars = NULL, nwords = NULL, offset = 0)
+random_text(nchars = NULL, nwords = NULL, offset = 0, var = 1)
 }
 \arguments{
 \item{nchars}{number of characters. One of the two params should be left NULL.}
@@ -12,6 +12,12 @@ random_text(nchars = NULL, nwords = NULL, offset = 0)
 \item{nwords}{number of words to return. One of the two params should be left NULL.}
 
 \item{offset}{number of characters or words to offset the result by. Defaults to 0.}
+
+\item{var}{integer >= 1 selecting a "variant" of the text: \code{var = 1} (the
+default) returns the historical result, while higher values return distinct
+slices of the lorem-ipsum corpus. Handy to get visually different chunks
+when calling \code{random_text()} repeatedly (e.g. in a bulleted list). The
+corpus wraps around when \code{var} is large.}
 }
 \value{
 a text

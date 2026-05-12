@@ -7,11 +7,12 @@
 random_image_ext(width = 400, height = 400, seed = NULL)
 }
 \arguments{
-\item{width, height}{image dimensions, in pixels. Single positive integers.}
+\item{width, height}{image dimensions, in pixels. Single positive
+(finite, whole) numbers.}
 
 \item{seed}{optional seed making the picked image stable across calls. Any
-scalar; it is coerced to a string and URL-encoded. When \code{NULL} (default), a
-fresh random image is served on every request.}
+atomic scalar; it is coerced to a string and URL-encoded. When \code{NULL}
+(default), a fresh random image is served on every request.}
 }
 \value{
 an \verb{<img>} \link[htmltools:builder]{htmltools::tag}

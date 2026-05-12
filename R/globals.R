@@ -5,7 +5,7 @@ utils::globalVariables(unique(c(
   "mpg", "disp", "vs", "wt", "qsec", "cyl",
   "Solar.R", "Wind", "Month", "Temp", "Ozone",
   "Var1", "Freq",
-  "date", "unemploy",
+  "date", "unemploy", "psavert", "passengers",
   "waiting", "eruptions", "density",
   "year", "month", "median",
   "height", "weight",

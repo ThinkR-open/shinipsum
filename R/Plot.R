@@ -2,9 +2,9 @@
 #'
 #' This function returns a ggplot object, which can be passed to `renderPlot` and `plotOutput`
 #'
-#' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin" and defines the geom of the ggplot. Default is "random", and chooses a random geom for you.
+#' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin", "ts" (alias "timeseries") and defines the geom of the ggplot. Default is "random", and chooses a random geom for you. The "ts" type returns a time-series oriented plot, with a `Date` on the x axis.
 #'
-#' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line facet_grid geom_col scale_fill_viridis_c
+#' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line geom_area facet_grid geom_col scale_fill_viridis_c
 #' @importFrom ggplot2 xlim ylim geom_bin2d geom_contour geom_density geom_density_2d geom_dotplot
 #' @importFrom ggplot2 geom_hex geom_freqpoly stat geom_histogram geom_ribbon geom_raster geom_violin
 #'
@@ -18,7 +18,10 @@ random_ggplot <- function(type = c("random", "point", "bar",
                                    "density", "density_2d", "dotplot",
                                    "hex", "freqpoly", "histogram",
                                    "ribbon", "raster", "tile",
-                                   "violin")) {
+                                   "violin", "ts")) {
+  if (length(type) == 1L && identical(type, "timeseries")) {
+    type <- "ts"
+  }
   type_matched <- match.arg(type)
 
   if (type_matched == "random") {
@@ -46,7 +49,8 @@ random_ggplot <- function(type = c("random", "point", "bar",
       "ribbon" = sample(140:141, 1),
       "raster" = sample(150:151, 1),
       "tile" = sample(160:161, 1),
-      "violin" = sample(170:171, 1)
+      "violin" = sample(170:171, 1),
+      "ts" = sample(180:182, 1)
     )
 
   res <- switch(as.character(r),
@@ -144,7 +148,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
     "50" = list(
       ggplot(datasets::women) +
         aes(height, weight) +
-        geom_line(size = 2) +
+        geom_line(linewidth = 2) +
         theme_minimal()
     ),
     "51" = list(
@@ -298,6 +302,36 @@ random_ggplot <- function(type = c("random", "point", "bar",
     "171" = list(
       ggplot(datasets::iris, aes(Species, Sepal.Length)) +
         geom_violin() +
+        theme_minimal()
+    ),
+    "180" = list(
+      ggplot(ggplot2::economics) +
+        aes(date, unemploy) +
+        geom_line() +
+        labs(x = "date", y = "unemployment") +
+        theme_minimal()
+    ),
+    "181" = list(
+      ggplot(
+        data.frame(
+          date = seq(
+            as.Date("1949-01-01"),
+            by = "month",
+            length.out = length(datasets::AirPassengers)
+          ),
+          passengers = as.numeric(datasets::AirPassengers)
+        )
+      ) +
+        aes(date, passengers) +
+        geom_line() +
+        geom_point(size = 0.8) +
+        theme_minimal()
+    ),
+    "182" = list(
+      ggplot(ggplot2::economics) +
+        aes(date, psavert) +
+        geom_area(fill = "#440154FF", alpha = 0.7) +
+        labs(x = "date", y = "personal savings rate") +
         theme_minimal()
     )
   )

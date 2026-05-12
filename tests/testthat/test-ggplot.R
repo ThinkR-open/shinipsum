@@ -10,3 +10,11 @@ test_that("ggplot creation works", {
   )
 
 })
+
+test_that("ggplotly creation works", {
+  a <- random_ggplotly()
+  expect_is(a, "plotly")
+  expect_is(a, "htmlwidget")
+  b <- random_ggplotly("ts")
+  expect_is(b, "plotly")
+})

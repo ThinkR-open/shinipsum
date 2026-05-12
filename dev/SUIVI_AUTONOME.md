@@ -46,3 +46,10 @@ Cette branche s'attaque aux issues restantes.
 - Red : `tests/testthat/test-text-var.R` (var=1 == comportement historique, var différents -> textes différents, taille préservée, wrap sur var énorme, combinaison avec offset, validation) -> 4 FAIL `unused argument`.
 - Green : ajout du paramètre `var` (entier >= 1, défaut 1) à `random_text()`. `var == 1` -> code historique inchangé (octet pour octet) ; `var > 1` -> tranche décalée du corpus avec wrap (corpus doublé pour nchars, modulo pour nwords). Validation `attempt::stop_if_not`.
 - Couverture `R/Text.R` : 100%. Suite : 3396 PASS / 0 FAIL / 0 WARN. Total paquet : 98.76%.
+
+## pr-reviewer (PR #16)
+- Verdict : APPROVE (nits mineurs). Aucun blocage. ERROR `--as-cran` (`geom_density_2d` -> `MASS` non déclaré) confirmé préexistant sur `master`.
+- Nits adressés :
+  - validation explicite de `heights` dans `random_mock()` (+ tests).
+  - labels auto de `random_mock()` : `random_text(nwords = 3, var = i)` (distincts, wrap) au lieu d'un découpage par offset.
+- Nits laissés (notés comme non-bloquants / follow-up) : alias `timeseries` géré seulement pour le cas length-1 (cohérent avec `match.arg`) ; quirk de précédence `1+offset:nwords+offset` préservé volontairement.

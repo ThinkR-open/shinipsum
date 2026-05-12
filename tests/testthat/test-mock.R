@@ -27,10 +27,19 @@ test_that("random_mock recycles heights and labels", {
   expect_equal(lengths(regmatches(html, gregexpr("&nbsp;", html))), 6)
 })
 
-test_that("random_mock generates labels when none supplied", {
+test_that("random_mock generates distinct labels when none supplied", {
   m <- random_mock(c(4, 4, 4))
   html <- paste(as.character(m), collapse = "")
   expect_match(html, "shinipsum-mock-label")
+  lab <- vapply(
+    seq_len(3),
+    function(i) random_text(nwords = 3, var = i),
+    character(1)
+  )
+  expect_equal(length(unique(lab)), 3)
+  for (l in lab) {
+    expect_match(html, l, fixed = TRUE)
+  }
 })
 
 test_that("random_mock validates widths", {
@@ -40,4 +49,12 @@ test_that("random_mock validates widths", {
   expect_error(random_mock(c(0, 4)), "widths")
   expect_error(random_mock(c(4, 4.5)), "widths")
   expect_error(random_mock(c(4, NA)), "widths")
+})
+
+test_that("random_mock validates heights", {
+  expect_error(random_mock(c(4, 8), heights = "a"), "heights")
+  expect_error(random_mock(c(4, 8), heights = 0), "heights")
+  expect_error(random_mock(c(4, 8), heights = 2.5), "heights")
+  expect_error(random_mock(c(4, 8), heights = c(2, NA)), "heights")
+  expect_error(random_mock(c(4, 8), heights = integer(0)), "heights")
 })

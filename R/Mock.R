@@ -32,6 +32,12 @@ random_mock <- function(widths, heights = 3, labels = NULL) {
       all(.x == as.integer(.x)) && all(.x >= 1L & .x <= 12L),
     "`widths` must be a non-empty vector of integers between 1 and 12"
   )
+  stop_if_not(
+    heights,
+    ~ is.numeric(.x) && length(.x) >= 1L && all(!is.na(.x)) &&
+      all(.x == as.integer(.x)) && all(.x >= 1L),
+    "`heights` must be a non-empty vector of integers >= 1"
+  )
 
   n <- length(widths)
   heights <- rep_len(as.integer(heights), n)
@@ -39,7 +45,7 @@ random_mock <- function(widths, heights = 3, labels = NULL) {
     labels <- vapply(
       seq_len(n),
       function(i) {
-        trimws(random_text(nchars = 14, offset = (i - 1L) * 14L))
+        random_text(nwords = 3, var = i)
       },
       character(1)
     )
@@ -52,7 +58,7 @@ random_mock <- function(widths, heights = 3, labels = NULL) {
       tags$div(
         class = paste0("col-sm-", widths[i], " shinipsum-mock"),
         lapply(
-          seq_len(max(heights[i], 1L)),
+          seq_len(heights[i]),
           function(j) {
             tags$p(HTML("&nbsp;"))
           }

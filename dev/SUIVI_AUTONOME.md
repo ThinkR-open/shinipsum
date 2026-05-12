@@ -58,3 +58,10 @@ Cette branche s'attaque aux issues restantes.
 - macOS / Windows R-CMD-check rouge : le test `random_ggplotly()` (sans arg, ajouté pour la couverture) tirait au hasard une variante `density_2d`/`hex` qui, une fois *construite* par `ggplotly()`, exige `MASS`/`hexbin` - absents des images CI minimales. (`random_ggplot()` seul ne construit pas le plot, d'où l'absence d'échec préexistant.)
 - Fix : test `random_ggplotly()` rendu déterministe (types `point`/`line`/`bar`/`ts`, sans dépendance optionnelle) + ajout de `MASS` et `hexbin` à `Suggests` (corrige aussi l'ERROR `--as-cran` préexistant signalé par la review).
 - `test-coverage` CI reste rouge : action `actions/cache@v2` dépréciée -> auto-fail GitHub. Préexistant, traité par les PR #14 / #15 (modernisation des workflows) ; non touché ici pour ne pas tripler le même changement.
+
+## CI (PR #16, run 2) - VERT
+- `R-CMD-check` : PASS sur macOS, Windows, Ubuntu (devel / release / oldrel-1). 0 ERROR / 0 WARNING.
+- `test-coverage` : toujours rouge (`actions/cache@v2` déprécié -> auto-fail GitHub, dans le workflow obsolète `test-coverage.yaml`). Pré-existant sur `master`, indépendant de cette PR ; la modernisation des workflows est portée par les PR #14 / #15. Volontairement non dupliqué ici.
+
+## État final
+- PR #16 prête pour relecture humaine. Couvre #1, #3, #4 (+ #13). Reste à la merci d'une review/merge par un mainteneur (branche protégée : `mergeStateStatus = BLOCKED` faute d'approbation).

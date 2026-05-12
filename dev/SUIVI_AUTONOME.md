@@ -72,3 +72,9 @@ Cette branche s'attaque aux issues restantes.
 2. `R/Text.R` : branche `var > 1` (mode mots) réécrite sans précédence ambiguë `+`/`:` -> `start <- (offset + (var-1)*nwords) %% n ; idx <- ((start + seq.int(0L, nwords)) %% n) + 1L`. Comportement explicite et constant (nwords+1 mots) pour tout `var > 1`, avec wrap. `var == 1` toujours inchangé octet pour octet.
 3. `R/Plot.R` : `"tile"` était listé deux fois dans `formals(random_ggplot)$type` -> biais d'échantillonnage quand `type = "random"` + doc dupliquée. Dédoublonné (formals + roxygen). Nouveau test : `anyDuplicated(types) == 0`.
 - Suite : 3410 PASS / 0 FAIL / 0 WARN. Couverture inchangée (98.77%).
+
+## Retour Copilot #2 (PR #16)
+- "tile" en double dans formals + typo "chose" : déjà corrigés au commit précédent (Copilot relisait l'ancien état).
+- NOUVEAU `R/Plot.R` : la branche `"tile" = sample(160:161, 1)` du `switch` interne était morte (R prend la 1re occurrence). Fusionnée -> `"tile" = sample(c(40:41, 160:161), 1)`, doublon supprimé. Les variantes 160/161 deviennent atteignables (et couvertes par le test des 100 tirages).
+- NOUVEAU `NEWS.md` : suppression de la puce "Added a `NEWS.md` file..." (le fichier existe déjà ; bullet hérité du master, peu informatif).
+- Suite : 3411 PASS / 0 FAIL / 0 WARN. Couverture ~98.77%.

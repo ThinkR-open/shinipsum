@@ -8,4 +8,3 @@
   the lorem-ipsum corpus on repeated calls (#3).
 * Fixed a `ggplot2` deprecation warning in `random_ggplot("line")`
   (`size` -> `linewidth`) (#13).
-* Added a `NEWS.md` file to track changes to the package.

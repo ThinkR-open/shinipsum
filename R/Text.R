@@ -24,7 +24,7 @@ random_text <- function(nchars = NULL, nwords = NULL, offset = 0, var = 1){
   stop_if_all(
     list(nchars, nwords),
     ~ !is.null(.x),
-    "You can't chose both nchars and nwords"
+    "You can't choose both nchars and nwords"
   )
   stop_if_not(
     var,
@@ -52,8 +52,8 @@ random_text <- function(nchars = NULL, nwords = NULL, offset = 0, var = 1){
       res <- paste(shinipsum::lorem_words[1+offset:nwords+offset], collapse = " ")
     } else {
       n <- length(shinipsum::lorem_words)
-      shift <- (var - 1L) * nwords
-      idx <- ((1 + offset:nwords + offset + shift) - 1L) %% n + 1L
+      start <- (offset + (var - 1L) * nwords) %% n
+      idx <- ((start + seq.int(0L, nwords)) %% n) + 1L
       res <- paste(shinipsum::lorem_words[idx], collapse = " ")
     }
   }

@@ -11,6 +11,11 @@ test_that("ggplot creation works", {
 
 })
 
+test_that("the 'type' choices have no duplicates", {
+  types <- eval(formals(random_ggplot)$type)
+  expect_equal(anyDuplicated(types), 0L)
+})
+
 test_that("ggplotly creation works", {
   # use explicit types that don't pull optional packages (MASS / hexbin),
   # so the test stays deterministic on minimal CI images

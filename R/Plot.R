@@ -2,7 +2,7 @@
 #'
 #' This function returns a ggplot object, which can be passed to `renderPlot` and `plotOutput`
 #'
-#' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin", "ts" (alias "timeseries") and defines the geom of the ggplot. Default is "random", and chooses a random geom for you. The "ts" type returns a time-series oriented plot, with a `Date` on the x axis.
+#' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "violin", "ts" (alias "timeseries") and defines the geom of the ggplot. Default is "random", and chooses a random geom for you. The "ts" type returns a time-series oriented plot, with a `Date` on the x axis.
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line geom_area facet_grid geom_col scale_fill_viridis_c
 #' @importFrom ggplot2 xlim ylim geom_bin2d geom_contour geom_density geom_density_2d geom_dotplot
@@ -17,7 +17,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
                                    "line", "bin2d", "contour",
                                    "density", "density_2d", "dotplot",
                                    "hex", "freqpoly", "histogram",
-                                   "ribbon", "raster", "tile",
+                                   "ribbon", "raster",
                                    "violin", "ts")) {
   if (length(type) == 1L && identical(type, "timeseries")) {
     type <- "ts"

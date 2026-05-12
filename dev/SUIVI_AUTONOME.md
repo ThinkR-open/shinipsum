@@ -65,3 +65,10 @@ Cette branche s'attaque aux issues restantes.
 
 ## État final
 - PR #16 prête pour relecture humaine. Couvre #1, #3, #4 (+ #13). Reste à la merci d'une review/merge par un mainteneur (branche protégée : `mergeStateStatus = BLOCKED` faute d'approbation).
+
+## Retour Copilot (PR #16)
+3 commentaires, tous adressés :
+1. `R/Text.R` : typo "chose" -> "choose" dans le message d'erreur "You can't choose both nchars and nwords" (préexistant, corrigé puisqu'on touche le fichier).
+2. `R/Text.R` : branche `var > 1` (mode mots) réécrite sans précédence ambiguë `+`/`:` -> `start <- (offset + (var-1)*nwords) %% n ; idx <- ((start + seq.int(0L, nwords)) %% n) + 1L`. Comportement explicite et constant (nwords+1 mots) pour tout `var > 1`, avec wrap. `var == 1` toujours inchangé octet pour octet.
+3. `R/Plot.R` : `"tile"` était listé deux fois dans `formals(random_ggplot)$type` -> biais d'échantillonnage quand `type = "random"` + doc dupliquée. Dédoublonné (formals + roxygen). Nouveau test : `anyDuplicated(types) == 0`.
+- Suite : 3410 PASS / 0 FAIL / 0 WARN. Couverture inchangée (98.77%).

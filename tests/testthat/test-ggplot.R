@@ -12,9 +12,11 @@ test_that("ggplot creation works", {
 })
 
 test_that("ggplotly creation works", {
-  a <- random_ggplotly()
-  expect_is(a, "plotly")
-  expect_is(a, "htmlwidget")
-  b <- random_ggplotly("ts")
-  expect_is(b, "plotly")
+  # use explicit types that don't pull optional packages (MASS / hexbin),
+  # so the test stays deterministic on minimal CI images
+  for (type in c("point", "line", "bar", "ts")) {
+    a <- random_ggplotly(type)
+    expect_is(a, "plotly")
+    expect_is(a, "htmlwidget")
+  }
 })

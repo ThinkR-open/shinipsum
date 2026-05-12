@@ -53,3 +53,8 @@ Cette branche s'attaque aux issues restantes.
   - validation explicite de `heights` dans `random_mock()` (+ tests).
   - labels auto de `random_mock()` : `random_text(nwords = 3, var = i)` (distincts, wrap) au lieu d'un découpage par offset.
 - Nits laissés (notés comme non-bloquants / follow-up) : alias `timeseries` géré seulement pour le cas length-1 (cohérent avec `match.arg`) ; quirk de précédence `1+offset:nwords+offset` préservé volontairement.
+
+## CI fix (PR #16, run 1)
+- macOS / Windows R-CMD-check rouge : le test `random_ggplotly()` (sans arg, ajouté pour la couverture) tirait au hasard une variante `density_2d`/`hex` qui, une fois *construite* par `ggplotly()`, exige `MASS`/`hexbin` - absents des images CI minimales. (`random_ggplot()` seul ne construit pas le plot, d'où l'absence d'échec préexistant.)
+- Fix : test `random_ggplotly()` rendu déterministe (types `point`/`line`/`bar`/`ts`, sans dépendance optionnelle) + ajout de `MASS` et `hexbin` à `Suggests` (corrige aussi l'ERROR `--as-cran` préexistant signalé par la review).
+- `test-coverage` CI reste rouge : action `actions/cache@v2` dépréciée -> auto-fail GitHub. Préexistant, traité par les PR #14 / #15 (modernisation des workflows) ; non touché ici pour ne pas tripler le même changement.

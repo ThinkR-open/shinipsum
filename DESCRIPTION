@@ -32,7 +32,9 @@ Imports:
     plotly,
     stats,
     utils
-Suggests: 
+Suggests:
+    hexbin,
+    MASS,
     testthat
 Encoding: UTF-8
 LazyData: true

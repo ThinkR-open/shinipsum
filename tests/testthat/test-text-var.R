@@ -26,6 +26,13 @@ test_that("var keeps the requested size", {
   for (v in c(1, 2, 5, 50)) {
     expect_equal(nchar(random_text(nchars = 25, var = v)), 25)
   }
+  # var > 1 returns exactly `nwords` words
+  for (v in c(2, 5, 1e6)) {
+    expect_equal(
+      length(strsplit(random_text(nwords = 10, var = v), " ")[[1]]),
+      10
+    )
+  }
   # very large var wraps around the corpus instead of producing NA / short text
   big <- random_text(nchars = 20, var = 1e6)
   expect_equal(nchar(big), 20)

@@ -78,3 +78,11 @@ Cette branche s'attaque aux issues restantes.
 - NOUVEAU `R/Plot.R` : la branche `"tile" = sample(160:161, 1)` du `switch` interne était morte (R prend la 1re occurrence). Fusionnée -> `"tile" = sample(c(40:41, 160:161), 1)`, doublon supprimé. Les variantes 160/161 deviennent atteignables (et couvertes par le test des 100 tirages).
 - NOUVEAU `NEWS.md` : suppression de la puce "Added a `NEWS.md` file..." (le fichier existe déjà ; bullet hérité du master, peu informatif).
 - Suite : 3411 PASS / 0 FAIL / 0 WARN. Couverture ~98.77%.
+
+## Retour Copilot #3 (PR #16)
+- `NEWS.md` ("Added a NEWS.md file") et `Plot.R:52` ("tile" en double dans le switch) : déjà corrigés au commit 3307c48 ; Copilot relisait un commit antérieur (la re-review a couru avant le push).
+- NOUVEAU `R/Text.R` : branche `var > 1` (mode mots) renvoyait `nwords + 1` mots (cohérent avec le quirk historique de `var == 1`). Changé pour renvoyer exactement `nwords` mots -> `idx <- ((start + seq_len(nwords) - 1L) %% n) + 1L`. Test ajouté (compte de mots pour var = 2, 5, 1e6). `var == 1` toujours inchangé.
+- Suite : 3414 PASS / 0 FAIL / 0 WARN. Couverture ~98.77%.
+
+## PR #17 - retour Copilot
+- 3e passe Copilot : "generated no new comments" -> PR #17 considérée propre. CI verte.

@@ -53,7 +53,7 @@ random_text <- function(nchars = NULL, nwords = NULL, offset = 0, var = 1){
     } else {
       n <- length(shinipsum::lorem_words)
       start <- (offset + (var - 1L) * nwords) %% n
-      idx <- ((start + seq.int(0L, nwords)) %% n) + 1L
+      idx <- ((start + seq_len(nwords) - 1L) %% n) + 1L
       res <- paste(shinipsum::lorem_words[idx], collapse = " ")
     }
   }

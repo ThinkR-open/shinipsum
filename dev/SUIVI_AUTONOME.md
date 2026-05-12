@@ -15,7 +15,7 @@ Cette branche s'attaque aux issues restantes.
 |---|-------|--------|
 | #4 | option série temporelle pour `random_ggplot()` | fait |
 | #1 | `mock_frame()` : zoning de blocs UI Shiny -> `random_mock()` | fait |
-| #3 | variantes de texte pour `random_text()` | à faire (si temps) |
+| #3 | variantes de texte pour `random_text()` -> arg `var` | fait |
 
 ## Journal
 
@@ -41,3 +41,8 @@ Cette branche s'attaque aux issues restantes.
 
 ## pr-reviewer
 - (à lancer une fois la PR ouverte)
+
+### #3 - random_text(var =) - FAIT
+- Red : `tests/testthat/test-text-var.R` (var=1 == comportement historique, var différents -> textes différents, taille préservée, wrap sur var énorme, combinaison avec offset, validation) -> 4 FAIL `unused argument`.
+- Green : ajout du paramètre `var` (entier >= 1, défaut 1) à `random_text()`. `var == 1` -> code historique inchangé (octet pour octet) ; `var > 1` -> tranche décalée du corpus avec wrap (corpus doublé pour nchars, modulo pour nwords). Validation `attempt::stop_if_not`.
+- Couverture `R/Text.R` : 100%. Suite : 3396 PASS / 0 FAIL / 0 WARN. Total paquet : 98.76%.

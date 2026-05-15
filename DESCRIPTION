@@ -1,0 +1,36 @@
+Package: shinipsum
+Title: Lorem-Ipsum-Like Helpers for Fast Shiny Prototyping
+Version: 0.1.1
+Authors@R: 
+    c(person(given = "Colin",
+             family = "Fay",
+             role = c("cre", "aut"),
+             email = "contact@colinfay.me",
+             comment = c(ORCID = "0000-0001-7343-1846")),
+      person(given = "Sebastien",
+             family = "Rochette",
+             role = "aut",
+             email = "sebastien@thinkr.fr",
+             comment = c(ORCID = "0000-0002-1565-9313")),
+      person(given = "ThinkR",
+             role = c("cph", "fnd")))
+Description: Prototype your shiny apps quickly with these
+    Lorem-Ipsum-like Helpers.
+License: MIT + file LICENSE
+URL: https://github.com/Thinkr-open/shinipsum
+BugReports: https://github.com/Thinkr-open/shinipsum/issues
+Depends: R (>= 2.10)
+Imports: attempt, datasets, DT, dygraphs, ggplot2 (>= 3.0.0), magrittr,
+        plotly, stats, utils
+Suggests: testthat
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.2.3
+NeedsCompilation: no
+Packaged: 2024-02-09 14:59:52 UTC; colinfay
+Author: Colin Fay [cre, aut] (<https://orcid.org/0000-0001-7343-1846>),
+  Sebastien Rochette [aut] (<https://orcid.org/0000-0002-1565-9313>),
+  ThinkR [cph, fnd]
+Maintainer: Colin Fay <contact@colinfay.me>
+Repository: CRAN
+Date/Publication: 2024-02-09 15:50:05 UTC

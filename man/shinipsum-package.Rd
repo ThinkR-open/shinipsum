@@ -6,8 +6,7 @@
 \alias{shinipsum-package}
 \title{shinipsum: Lorem-Ipsum-like Helpers for fast Shiny Prototyping}
 \description{
-Prototype your shiny apps quickly with these
-    Lorem-Ipsum-like Helpers.
+Prototype your shiny apps quickly with these Lorem-Ipsum-like Helpers.
 }
 \seealso{
 Useful links:

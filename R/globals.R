@@ -1,4 +1,5 @@
-utils::globalVariables(unique(c(
+#' @importFrom utils globalVariables
+globalVariables(unique(c(
   ".",
   # random_ggplot
   "Sepal.Length", "Sepal.Width", "Species", "Petal.Width",

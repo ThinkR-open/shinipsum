@@ -144,7 +144,11 @@ random_ggplot <- function(type = c("random", "point", "bar",
     "50" = list(
       ggplot(datasets::women) +
         aes(height, weight) +
-        geom_line(size = 2) +
+        (if (utils::packageVersion("ggplot2") >= "3.4.0") {
+          geom_line(linewidth = 2)
+        } else {
+          geom_line(size = 2)
+        }) +
         theme_minimal()
     ),
     "51" = list(

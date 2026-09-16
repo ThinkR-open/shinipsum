@@ -1,5 +1,10 @@
 # shinipsum 0.1.1.9000
 
+* `random_text(nwords =)` now returns exactly `nwords` words. `offset` was
+  parsed as `1 + (offset:nwords) + offset`, so both the number of words and
+  the order of the slice depended on `offset` (e.g. `nwords = 3, offset = 10`
+  returned 8 words, in reverse). This changes the output of every
+  `random_text(nwords =)` call.
 * New `random_image_ext()`: returns an `<img>` tag pointing at the
   [Lorem Picsum](https://picsum.photos/) API, with `width` / `height` / `seed`
   arguments, for quick Shiny UI prototyping (#8, thanks @feddelegrand7).

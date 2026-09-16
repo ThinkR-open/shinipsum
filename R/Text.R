@@ -29,7 +29,7 @@ random_text <- function(nchars = NULL, nwords = NULL, offset=0){
       nchars+offset
     )
   } else {
-    res <- paste(shinipsum::lorem_words[1+offset:nwords+offset], collapse = " ")
+    res <- paste(shinipsum::lorem_words[(1 + offset):(nwords + offset)], collapse = " ")
   }
 
   substr(res, 1, 1) <- toupper(substr(res, 1, 1))

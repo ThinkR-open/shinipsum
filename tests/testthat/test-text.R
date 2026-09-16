@@ -7,6 +7,13 @@ expect_nchar <- function(a, b){
   )
 }
 
+expect_nwords <- function(a, b){
+  expect_equal(
+    length(strsplit(a, " ")[[1]]),
+    b
+  )
+}
+
 test_that("nchar works", {
   lapply(
     1:100, function(x){
@@ -23,17 +30,17 @@ test_that("nchar works", {
         42
       )
 
-      expect_nchar(
+      expect_nwords(
         random_text(nwords = 12),
-        86
+        12
       )
-      expect_nchar(
+      expect_nwords(
         random_text(nwords = 100),
-        650
+        100
       )
-      expect_nchar(
+      expect_nwords(
         random_text(nwords = 800),
-        5244
+        800
       )
     })
 })
@@ -54,17 +61,29 @@ test_that("offset works", {
         42
       )
 
-      expect_nchar(
+      expect_nwords(
         random_text(nwords = 12, offset = 20),
-        51
+        12
       )
-      expect_nchar(
+      expect_nwords(
         random_text(nwords = 100, offset = 20),
-        526
+        100
       )
-      expect_nchar(
+      expect_nwords(
         random_text(nwords = 800, offset = 20),
-        5105
+        800
       )
     })
+})
+
+test_that("offset slides the word window by exactly one word", {
+  # `1+offset:nwords+offset` used to parse as `1 + (offset:nwords) + offset`,
+  # so both the length and the direction of the slice depended on offset.
+  words <- strsplit(random_text(nwords = 5, offset = 0), " ")[[1]]
+  for (o in 0:4) {
+    expect_equal(
+      tolower(strsplit(random_text(nwords = 5 - o, offset = o), " ")[[1]]),
+      tolower(words[seq(o + 1, 5)])
+    )
+  }
 })

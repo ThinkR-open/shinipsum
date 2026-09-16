@@ -18,6 +18,8 @@
   : A Random ggplotly
 - [`random_image()`](https://thinkr-open.github.io/shinipsum/reference/random_image.md)
   : A Random Image
+- [`random_image_ext()`](https://thinkr-open.github.io/shinipsum/reference/random_image_ext.md)
+  : A Random External Image from the Lorem Picsum API
 - [`random_lm()`](https://thinkr-open.github.io/shinipsum/reference/random_lm.md)
   : A Random Linear Model
 - [`random_print()`](https://thinkr-open.github.io/shinipsum/reference/random_print.md)

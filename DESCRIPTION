@@ -26,7 +26,7 @@ Imports:
     datasets,
     DT,
     dygraphs,
-    ggplot2 (>= 3.4.0),
+    ggplot2 (>= 3.0.0),
     htmltools,
     magrittr,
     plotly,

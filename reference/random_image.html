@@ -39,12 +39,31 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">random_image</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">random_image</span><span class="op">(</span>width <span class="op">=</span> <span class="cn">NULL</span>, height <span class="op">=</span> <span class="cn">NULL</span>, alt <span class="op">=</span> <span class="cn">NULL</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
+    <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
+
+
+<dl><dt id="arg-width">width<a class="anchor" aria-label="anchor" href="#arg-width"></a></dt>
+<dd><p>image width passed through to the rendered <code>&lt;img&gt;</code> tag.
+<code>NULL</code> (default) leaves the attribute unset (#9).</p></dd>
+
+
+<dt id="arg-height">height<a class="anchor" aria-label="anchor" href="#arg-height"></a></dt>
+<dd><p>image height, same semantics as <code>width</code> (#9).</p></dd>
+
+
+<dt id="arg-alt">alt<a class="anchor" aria-label="anchor" href="#arg-alt"></a></dt>
+<dd><p><code>alt</code> attribute for accessibility. <code>NULL</code> (default) leaves
+the attribute unset (#9).</p></dd>
+
+</dl></div>
+    <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>an image</p>
+    <p>a list compatible with <code>shiny::renderImage()</code>: <code>src</code>, plus the
+<code>width</code> / <code>height</code> / <code>alt</code> attributes when provided.</p>
     </div>
 
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>

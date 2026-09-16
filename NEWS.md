@@ -1,5 +1,8 @@
 # shinipsum 0.1.1.9000
 
+* `random_ggplot()` gains a `"ts"` type (alias `"timeseries"`) returning a
+  time-series oriented plot with a `Date` on the x axis, and takes part in the
+  `"random"` draw (#4).
 * `random_ggplot("tile")` can now return all four of its variants. `"tile"`
   was listed twice in `type`, and `switch()` only matches the first entry, so
   two of them were unreachable.

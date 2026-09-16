@@ -1,5 +1,7 @@
 # shinipsum 0.1.1.9000
 
+* New `random_mock()`: sketches the zoning of a Shiny UI as a row of bordered,
+  labelled bootstrap columns, returned as a `htmltools::tagList()` (#1).
 * `random_text()` gains a `var` argument: each integer value returns a
   distinct slice of the corpus, so repeated calls don't all look alike.
   `var = 1` (the default) is unchanged (#3).

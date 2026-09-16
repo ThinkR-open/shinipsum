@@ -1,5 +1,8 @@
 # shinipsum 0.1.1.9000
 
+* `random_text()` gains a `var` argument: each integer value returns a
+  distinct slice of the corpus, so repeated calls don't all look alike.
+  `var = 1` (the default) is unchanged (#3).
 * `random_ggplot()` gains a `"ts"` type (alias `"timeseries"`) returning a
   time-series oriented plot with a `Date` on the x axis, and takes part in the
   `"random"` draw (#4).

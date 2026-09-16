@@ -17,7 +17,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
                                    "line", "bin2d", "contour",
                                    "density", "density_2d", "dotplot",
                                    "hex", "freqpoly", "histogram",
-                                   "ribbon", "raster", "tile",
+                                   "ribbon", "raster",
                                    "violin")) {
   type_matched <- match.arg(type)
 
@@ -33,7 +33,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
       "bar" = sample(10:11, 1),
       "boxplot" = sample(20:21, 1),
       "col" = sample(30:31, 1),
-      "tile" = sample(40:41, 1),
+      "tile" = sample(c(40:41, 160:161), 1),
       "line" = sample(50:51, 1),
       "bin2d" = sample(60:61, 1),
       "contour" = sample(70:71, 1),
@@ -45,7 +45,6 @@ random_ggplot <- function(type = c("random", "point", "bar",
       "histogram" = sample(130:131, 1),
       "ribbon" = sample(140:141, 1),
       "raster" = sample(150:151, 1),
-      "tile" = sample(160:161, 1),
       "violin" = sample(170:171, 1)
     )
 

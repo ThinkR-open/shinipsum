@@ -10,3 +10,10 @@ test_that("ggplot creation works", {
   )
 
 })
+
+test_that("the 'type' choices have no duplicates", {
+  # "tile" used to be listed twice, and switch() only ever matches the first
+  # entry, so the 160/161 variants were unreachable.
+  types <- eval(formals(random_ggplot)$type)
+  expect_equal(anyDuplicated(types), 0L)
+})

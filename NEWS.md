@@ -1,5 +1,8 @@
 # shinipsum 0.1.1.9000
 
+* `random_ggplot("tile")` can now return all four of its variants. `"tile"`
+  was listed twice in `type`, and `switch()` only matches the first entry, so
+  two of them were unreachable.
 * `random_text(nwords =)` now returns exactly `nwords` words. `offset` was
   parsed as `1 + (offset:nwords) + offset`, so both the number of words and
   the order of the slice depended on `offset` (e.g. `nwords = 3, offset = 10`

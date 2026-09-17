@@ -34,7 +34,9 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.1.9000" id="shinipsum-0119000">shinipsum 0.1.1.9000<a class="anchor" aria-label="anchor" href="#shinipsum-0119000"></a></h2>
-<ul><li>New <code><a href="../reference/random_mock.html">random_mock()</a></code>: sketches the zoning of a Shiny UI as a row of bordered, labelled bootstrap columns, returned as a <code><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">htmltools::tagList()</a></code> (<a href="https://github.com/Thinkr-open/shinipsum/issues/1" class="external-link">#1</a>).</li>
+<ul><li>
+<code>random_ggplot("bar")</code> gains an <code>n_bars</code> argument to draw an exact number of bars. It is only valid with <code>type = "bar"</code> and errors otherwise (<a href="https://github.com/Thinkr-open/shinipsum/issues/5" class="external-link">#5</a>).</li>
+<li>New <code><a href="../reference/random_mock.html">random_mock()</a></code>: sketches the zoning of a Shiny UI as a row of bordered, labelled bootstrap columns, returned as a <code><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">htmltools::tagList()</a></code> (<a href="https://github.com/Thinkr-open/shinipsum/issues/1" class="external-link">#1</a>).</li>
 <li>
 <code><a href="../reference/random_text.html">random_text()</a></code> gains a <code>var</code> argument: each integer value returns a distinct slice of the corpus, so repeated calls don’t all look alike. <code>var = 1</code> (the default) is unchanged (<a href="https://github.com/Thinkr-open/shinipsum/issues/3" class="external-link">#3</a>).</li>
 <li>

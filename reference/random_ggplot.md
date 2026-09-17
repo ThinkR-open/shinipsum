@@ -9,7 +9,8 @@ This function returns a ggplot object, which can be passed to
 random_ggplot(
   type = c("random", "point", "bar", "boxplot", "col", "tile", "line", "bin2d",
     "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram",
-    "ribbon", "raster", "violin", "ts")
+    "ribbon", "raster", "violin", "ts"),
+  n_bars = NULL
 )
 ```
 
@@ -24,6 +25,12 @@ random_ggplot(
   the ggplot. Default is "random", and chooses a random geom for you.
   The "ts" type returns a time-series oriented plot, with a `Date` on
   the x axis.
+
+- n_bars:
+
+  number of bars to draw. Only valid together with `type = "bar"`, and
+  errors otherwise. When `NULL` (default) one of the built-in datasets
+  is used instead.
 
 ## Value
 

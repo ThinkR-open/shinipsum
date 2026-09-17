@@ -2,6 +2,9 @@
 
 ## shinipsum 0.1.1.9000
 
+- `random_ggplot("bar")` gains an `n_bars` argument to draw an exact
+  number of bars. It is only valid with `type = "bar"` and errors
+  otherwise ([\#5](https://github.com/Thinkr-open/shinipsum/issues/5)).
 - New
   [`random_mock()`](https://thinkr-open.github.io/shinipsum/reference/random_mock.md):
   sketches the zoning of a Shiny UI as a row of bordered, labelled

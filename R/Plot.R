@@ -1,11 +1,22 @@
+#' Categorical labels for random_ggplot("bar", n_bars =)
+#' @noRd
+make_bar_labels <- function(n) {
+  if (n <= 26L) LETTERS[seq_len(n)] else sprintf("Cat%02d", seq_len(n))
+}
+
 #' A Random ggplot
 #'
 #' This function returns a ggplot object, which can be passed to `renderPlot` and `plotOutput`
 #'
 #' @param type type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "violin", "ts" (alias "timeseries") and defines the geom of the ggplot. Default is "random", and chooses a random geom for you. The "ts" type returns a time-series oriented plot, with a `Date` on the x axis.
+#' @param n_bars number of bars to draw. Only valid together with
+#'   `type = "bar"`, and errors otherwise. When `NULL` (default) one of the
+#'   built-in datasets is used instead.
 #'
 #' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line geom_area facet_grid geom_col scale_fill_viridis_c
 #' @importFrom ggplot2 xlim ylim geom_bin2d geom_contour geom_density geom_density_2d geom_dotplot
+#' @importFrom ggplot2 scale_fill_viridis_d theme
+#' @importFrom attempt stop_if_not
 #' @importFrom ggplot2 geom_hex geom_freqpoly stat geom_histogram geom_ribbon geom_raster geom_violin
 #'
 #' @return a ggplot
@@ -18,11 +29,38 @@ random_ggplot <- function(type = c("random", "point", "bar",
                                    "density", "density_2d", "dotplot",
                                    "hex", "freqpoly", "histogram",
                                    "ribbon", "raster",
-                                   "violin", "ts")) {
+                                   "violin", "ts"),
+                          n_bars = NULL) {
   if (length(type) == 1L && identical(type, "timeseries")) {
     type <- "ts"
   }
   type_matched <- match.arg(type)
+
+  if (!is.null(n_bars)) {
+    stop_if_not(
+      type_matched,
+      ~ identical(.x, "bar"),
+      '`n_bars` only applies to type = "bar"'
+    )
+    stop_if_not(
+      n_bars,
+      ~ is.numeric(.x) && length(.x) == 1L && is.finite(.x) &&
+        .x >= 1 && .x == round(.x),
+      "`n_bars` must be a single positive integer"
+    )
+    labels <- make_bar_labels(as.integer(n_bars))
+    return(
+      ggplot(data.frame(
+        category = factor(labels, levels = labels),
+        value = sample.int(100L, length(labels), replace = TRUE)
+      )) +
+        aes(category, value, fill = category) +
+        geom_col() +
+        scale_fill_viridis_d() +
+        theme_minimal() +
+        theme(legend.position = "none")
+    )
+  }
 
   if (type_matched == "random") {
     form <- eval(formals()$type)

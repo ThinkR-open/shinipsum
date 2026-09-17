@@ -34,7 +34,14 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.1.1.9000" id="shinipsum-0119000">shinipsum 0.1.1.9000<a class="anchor" aria-label="anchor" href="#shinipsum-0119000"></a></h2>
-<ul><li>
+<ul><li>New <code><a href="../reference/random_mock.html">random_mock()</a></code>: sketches the zoning of a Shiny UI as a row of bordered, labelled bootstrap columns, returned as a <code><a href="https://rstudio.github.io/htmltools/reference/tagList.html" class="external-link">htmltools::tagList()</a></code> (<a href="https://github.com/Thinkr-open/shinipsum/issues/1" class="external-link">#1</a>).</li>
+<li>
+<code><a href="../reference/random_text.html">random_text()</a></code> gains a <code>var</code> argument: each integer value returns a distinct slice of the corpus, so repeated calls don’t all look alike. <code>var = 1</code> (the default) is unchanged (<a href="https://github.com/Thinkr-open/shinipsum/issues/3" class="external-link">#3</a>).</li>
+<li>
+<code><a href="../reference/random_ggplot.html">random_ggplot()</a></code> gains a <code>"ts"</code> type (alias <code>"timeseries"</code>) returning a time-series oriented plot with a <code>Date</code> on the x axis, and takes part in the <code>"random"</code> draw (<a href="https://github.com/Thinkr-open/shinipsum/issues/4" class="external-link">#4</a>).</li>
+<li>
+<code>random_ggplot("tile")</code> can now return all four of its variants. <code>"tile"</code> was listed twice in <code>type</code>, and <code><a href="https://rdrr.io/r/base/switch.html" class="external-link">switch()</a></code> only matches the first entry, so two of them were unreachable.</li>
+<li>
 <code>random_text(nwords =)</code> now returns exactly <code>nwords</code> words. <code>offset</code> was parsed as <code>1 + (offset:nwords) + offset</code>, so both the number of words and the order of the slice depended on <code>offset</code> (e.g. <code>nwords = 3, offset = 10</code> returned 8 words, in reverse). This changes the output of every <code>random_text(nwords =)</code> call.</li>
 <li>New <code><a href="../reference/random_image_ext.html">random_image_ext()</a></code>: returns an <code>&lt;img&gt;</code> tag pointing at the <a href="https://picsum.photos/" class="external-link">Lorem Picsum</a> API, with <code>width</code> / <code>height</code> / <code>seed</code> arguments, for quick Shiny UI prototyping (<a href="https://github.com/Thinkr-open/shinipsum/issues/8" class="external-link">#8</a>, thanks <a href="https://github.com/feddelegrand7" class="external-link">@feddelegrand7</a>).</li>
 <li>

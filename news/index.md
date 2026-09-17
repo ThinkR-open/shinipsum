@@ -2,6 +2,26 @@
 
 ## shinipsum 0.1.1.9000
 
+- New
+  [`random_mock()`](https://thinkr-open.github.io/shinipsum/reference/random_mock.md):
+  sketches the zoning of a Shiny UI as a row of bordered, labelled
+  bootstrap columns, returned as a
+  [`htmltools::tagList()`](https://rstudio.github.io/htmltools/reference/tagList.html)
+  ([\#1](https://github.com/Thinkr-open/shinipsum/issues/1)).
+- [`random_text()`](https://thinkr-open.github.io/shinipsum/reference/random_text.md)
+  gains a `var` argument: each integer value returns a distinct slice of
+  the corpus, so repeated calls don’t all look alike. `var = 1` (the
+  default) is unchanged
+  ([\#3](https://github.com/Thinkr-open/shinipsum/issues/3)).
+- [`random_ggplot()`](https://thinkr-open.github.io/shinipsum/reference/random_ggplot.md)
+  gains a `"ts"` type (alias `"timeseries"`) returning a time-series
+  oriented plot with a `Date` on the x axis, and takes part in the
+  `"random"` draw
+  ([\#4](https://github.com/Thinkr-open/shinipsum/issues/4)).
+- `random_ggplot("tile")` can now return all four of its variants.
+  `"tile"` was listed twice in `type`, and
+  [`switch()`](https://rdrr.io/r/base/switch.html) only matches the
+  first entry, so two of them were unreachable.
 - `random_text(nwords =)` now returns exactly `nwords` words. `offset`
   was parsed as `1 + (offset:nwords) + offset`, so both the number of
   words and the order of the slice depended on `offset`

@@ -39,7 +39,7 @@
 
     <div class="section level2">
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">random_text</span><span class="op">(</span>nchars <span class="op">=</span> <span class="cn">NULL</span>, nwords <span class="op">=</span> <span class="cn">NULL</span>, offset <span class="op">=</span> <span class="fl">0</span><span class="op">)</span></span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">random_text</span><span class="op">(</span>nchars <span class="op">=</span> <span class="cn">NULL</span>, nwords <span class="op">=</span> <span class="cn">NULL</span>, offset <span class="op">=</span> <span class="fl">0</span>, var <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div class="section level2">
@@ -56,6 +56,13 @@
 
 <dt id="arg-offset">offset<a class="anchor" aria-label="anchor" href="#arg-offset"></a></dt>
 <dd><p>number of characters or words to offset the result by. Defaults to 0.</p></dd>
+
+
+<dt id="arg-var">var<a class="anchor" aria-label="anchor" href="#arg-var"></a></dt>
+<dd><p>integer &gt;= 1 selecting a "variant" of the text: each value returns
+a distinct slice of the lorem-ipsum corpus, so repeated calls (e.g. in a
+bulleted list) don't all look alike. Defaults to 1. The corpus wraps around
+when <code>var</code> is large.</p></dd>
 
 </dl></div>
     <div class="section level2">

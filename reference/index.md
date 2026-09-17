@@ -22,6 +22,8 @@
   : A Random External Image from the Lorem Picsum API
 - [`random_lm()`](https://thinkr-open.github.io/shinipsum/reference/random_lm.md)
   : A Random Linear Model
+- [`random_mock()`](https://thinkr-open.github.io/shinipsum/reference/random_mock.md)
+  : A Mock UI Layout
 - [`random_print()`](https://thinkr-open.github.io/shinipsum/reference/random_print.md)
   : A Random print output
 - [`random_table()`](https://thinkr-open.github.io/shinipsum/reference/random_table.md)

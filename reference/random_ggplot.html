@@ -42,7 +42,7 @@
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">random_ggplot</span><span class="op">(</span></span>
 <span>  type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"random"</span>, <span class="st">"point"</span>, <span class="st">"bar"</span>, <span class="st">"boxplot"</span>, <span class="st">"col"</span>, <span class="st">"tile"</span>, <span class="st">"line"</span>, <span class="st">"bin2d"</span>,</span>
 <span>    <span class="st">"contour"</span>, <span class="st">"density"</span>, <span class="st">"density_2d"</span>, <span class="st">"dotplot"</span>, <span class="st">"hex"</span>, <span class="st">"freqpoly"</span>, <span class="st">"histogram"</span>,</span>
-<span>    <span class="st">"ribbon"</span>, <span class="st">"raster"</span>, <span class="st">"tile"</span>, <span class="st">"violin"</span><span class="op">)</span></span>
+<span>    <span class="st">"ribbon"</span>, <span class="st">"raster"</span>, <span class="st">"violin"</span>, <span class="st">"ts"</span><span class="op">)</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
 
@@ -51,7 +51,7 @@
 
 
 <dl><dt id="arg-type">type<a class="anchor" aria-label="anchor" href="#arg-type"></a></dt>
-<dd><p>type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "tile", "violin" and defines the geom of the ggplot. Default is "random", and chooses a random geom for you.</p></dd>
+<dd><p>type of the geom. Can be any of "random", "point", "bar", "boxplot","col", "tile", "line", "bin2d", "contour", "density", "density_2d", "dotplot", "hex", "freqpoly", "histogram", "ribbon", "raster", "violin", "ts" (alias "timeseries") and defines the geom of the ggplot. Default is "random", and chooses a random geom for you. The "ts" type returns a time-series oriented plot, with a <code>Date</code> on the x axis.</p></dd>
 
 </dl></div>
     <div class="section level2">

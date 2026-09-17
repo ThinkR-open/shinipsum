@@ -16,6 +16,7 @@ make_bar_labels <- function(n) {
 #' @importFrom ggplot2 ggplot aes geom_point geom_bar scale_color_viridis_d theme_minimal geom_boxplot labs coord_flip geom_tile geom_line geom_area facet_grid geom_col scale_fill_viridis_c
 #' @importFrom ggplot2 xlim ylim geom_bin2d geom_contour geom_density geom_density_2d geom_dotplot
 #' @importFrom ggplot2 scale_fill_viridis_d theme
+#' @importFrom ggplot2 .data after_stat
 #' @importFrom attempt stop_if_not
 #' @importFrom ggplot2 geom_hex geom_freqpoly stat geom_histogram geom_ribbon geom_raster geom_violin
 #'
@@ -54,7 +55,7 @@ random_ggplot <- function(type = c("random", "point", "bar",
         category = factor(labels, levels = labels),
         value = sample.int(100L, length(labels), replace = TRUE)
       )) +
-        aes(category, value, fill = category) +
+        aes(.data$category, .data$value, fill = .data$category) +
         geom_col() +
         scale_fill_viridis_d() +
         theme_minimal() +
@@ -93,14 +94,14 @@ random_ggplot <- function(type = c("random", "point", "bar",
   res <- switch(as.character(r),
     "0" = list(
       ggplot(datasets::iris) +
-        aes(Sepal.Length, Sepal.Width, color = Species) +
+        aes(.data$Sepal.Length, .data$Sepal.Width, color = .data$Species) +
         geom_point() +
         scale_color_viridis_d() +
         theme_minimal()
     ),
     "1" = list(
       ggplot(datasets::iris) +
-        aes(Sepal.Length, Petal.Width, color = Species) +
+        aes(.data$Sepal.Length, .data$Petal.Width, color = .data$Species) +
         geom_point() +
         scale_color_viridis_d() +
         facet_grid(.  ~ Species) +
@@ -108,32 +109,32 @@ random_ggplot <- function(type = c("random", "point", "bar",
     ),
     "2" = list(
       ggplot(datasets::mtcars) +
-        aes(mpg, disp, color = vs) +
+        aes(.data$mpg, .data$disp, color = .data$vs) +
         geom_point() +
         theme_minimal()
     ),
     "3" = list(
       ggplot(datasets::mtcars) +
-        aes(wt, qsec, color = as.factor(cyl)) +
+        aes(.data$wt, .data$qsec, color = as.factor(.data$cyl)) +
         geom_point() +
         scale_color_viridis_d() +
         theme_minimal()
     ),
     "4" = list(
       ggplot(datasets::airquality) +
-        aes(Solar.R, Wind, color = as.factor(Month)) +
+        aes(.data$Solar.R, .data$Wind, color = as.factor(.data$Month)) +
         geom_point() +
         theme_minimal()
     ),
     "5" = list(
       ggplot(datasets::airquality) +
-        aes(Wind, Temp, color = as.factor(Month)) +
+        aes(.data$Wind, .data$Temp, color = as.factor(.data$Month)) +
         geom_point() +
         theme_minimal()
     ),
     "10" = list(
       ggplot(datasets::airquality) +
-        aes(Temp) +
+        aes(.data$Temp) +
         geom_bar() +
         scale_color_viridis_d() +
         labs(color = "Month") +
@@ -141,19 +142,19 @@ random_ggplot <- function(type = c("random", "point", "bar",
     ),
     "11" = list(
       ggplot(datasets::mtcars) +
-        aes(cyl) +
+        aes(.data$cyl) +
         geom_bar(fill = "#440154FF") +
         theme_minimal()
     ),
     "20" = list(
       ggplot(datasets::airquality) +
-        aes(Month, Ozone, group = Month) +
+        aes(.data$Month, .data$Ozone, group = .data$Month) +
         geom_boxplot() +
         theme_minimal()
     ),
     "21" = list(
       ggplot(datasets::iris) +
-        aes(Species, Sepal.Length, group = Species) +
+        aes(.data$Species, .data$Sepal.Length, group = .data$Species) +
         geom_boxplot() +
         coord_flip() +
         theme_minimal()
@@ -161,30 +162,30 @@ random_ggplot <- function(type = c("random", "point", "bar",
     "30" = list(
       as.data.frame(table(ggplot2::diamonds$cut)) %>%
         ggplot() +
-        aes(Var1, Freq) +
+        aes(.data$Var1, .data$Freq) +
         geom_col()
     ),
     "31" = list(
       ggplot2::economics %>%
         ggplot() +
-        aes(date, unemploy) +
+        aes(.data$date, .data$unemploy) +
         geom_col()
     ),
     "40" = list(
       ggplot(ggplot2::faithfuld) +
-        aes(waiting, eruptions, fill = density) +
+        aes(.data$waiting, .data$eruptions, fill = .data$density) +
         geom_tile() +
         scale_fill_viridis_c()
     ),
     "41" = list(
       ggplot(ggplot2::txhousing) +
-        aes(year, month, fill = median) +
+        aes(.data$year, .data$month, fill = .data$median) +
         geom_tile() +
         scale_fill_viridis_c()
     ),
     "50" = list(
       ggplot(datasets::women) +
-        aes(height, weight) +
+        aes(.data$height, .data$weight) +
         (if (utils::packageVersion("ggplot2") >= "3.4.0") {
           geom_line(linewidth = 2)
         } else {
@@ -194,13 +195,13 @@ random_ggplot <- function(type = c("random", "point", "bar",
     ),
     "51" = list(
       ggplot(datasets::cars) +
-        aes(speed, dist) +
+        aes(.data$speed, .data$dist) +
         geom_line() +
         theme_minimal()
     ),
     "60" = list(
       ggplot(ggplot2::diamonds) +
-        aes(x, y) +
+        aes(.data$x, .data$y) +
         xlim(4, 10) +
         ylim(4, 10) +
         geom_bin2d() +
@@ -208,38 +209,38 @@ random_ggplot <- function(type = c("random", "point", "bar",
     ),
     "61" = list(
       ggplot(datasets::mtcars) +
-        aes(mpg, disp) +
+        aes(.data$mpg, .data$disp) +
         geom_bin2d() +
         theme_minimal()
     ),
     "70" = list(
-      ggplot(ggplot2::faithfuld, aes(waiting, eruptions, z = density)) +
+      ggplot(ggplot2::faithfuld, aes(.data$waiting, .data$eruptions, z = .data$density)) +
         geom_contour() +
         theme_minimal()
     ),
     "71" = list(
-      ggplot(ggplot2::faithfuld, aes(waiting, eruptions, z = density)) +
+      ggplot(ggplot2::faithfuld, aes(.data$waiting, .data$eruptions, z = .data$density)) +
         geom_contour(binwidth = 0.001) +
         theme_minimal()
     ),
     "80" = list(
-      ggplot(datasets::iris, aes(Sepal.Length)) +
+      ggplot(datasets::iris, aes(.data$Sepal.Length)) +
         geom_density() +
         theme_minimal()
     ),
     "81" = list(
-      ggplot(ggplot2::diamonds, aes(depth, fill = cut, colour = cut)) +
+      ggplot(ggplot2::diamonds, aes(.data$depth, fill = .data$cut, colour = .data$cut)) +
         geom_density(alpha = 0.1) +
         xlim(55, 70) +
         theme_minimal()
     ),
     "82" = list(
-      ggplot(ggplot2::diamonds, aes(carat, fill = cut)) +
+      ggplot(ggplot2::diamonds, aes(.data$carat, fill = .data$cut)) +
         geom_density(position = "stack") +
         theme_minimal()
     ),
     "90" = list(
-      ggplot(datasets::faithful, aes(x = eruptions, y = waiting)) +
+      ggplot(datasets::faithful, aes(x = .data$eruptions, y = .data$waiting)) +
         geom_point() +
         xlim(0.5, 6) +
         ylim(40, 110) +
@@ -248,71 +249,71 @@ random_ggplot <- function(type = c("random", "point", "bar",
     ),
     "91" = list(
       ggplot(ggplot2::diamonds[sample(nrow(ggplot2::diamonds), 1000), ],
-             aes(x, y)) +
-        geom_density_2d(aes(colour = cut)) +
+             aes(.data$x, .data$y)) +
+        geom_density_2d(aes(colour = .data$cut)) +
         theme_minimal()
     ),
     "100" = list(
-      ggplot(datasets::airquality, aes(x = Temp)) +
+      ggplot(datasets::airquality, aes(x = .data$Temp)) +
         geom_dotplot() +
         theme_minimal()
     ),
     "101" = list(
-      ggplot(datasets::iris, aes(x = Sepal.Length, fill = Species)) +
+      ggplot(datasets::iris, aes(x = .data$Sepal.Length, fill = .data$Species)) +
         geom_dotplot() +
         theme_minimal()
     ),
     "110" = list(
-      ggplot(ggplot2::diamonds, aes(carat, price)) +
+      ggplot(ggplot2::diamonds, aes(.data$carat, .data$price)) +
         geom_hex() +
         theme_minimal()
     ),
     "111" = list(
-      ggplot(datasets::iris, aes(Sepal.Length, Sepal.Width)) +
+      ggplot(datasets::iris, aes(.data$Sepal.Length, .data$Sepal.Width)) +
         geom_hex() +
         theme_minimal()
     ),
     "120" = list(
-      ggplot(ggplot2::diamonds, aes(price, colour = cut)) +
+      ggplot(ggplot2::diamonds, aes(.data$price, colour = .data$cut)) +
         geom_freqpoly(binwidth = 500) +
         theme_minimal()
     ),
     "121" = list(
       ggplot(ggplot2::diamonds,
-             aes(price, stat(density), colour = cut)) +
+             aes(.data$price, after_stat(.data$density), colour = .data$cut)) +
         geom_freqpoly(binwidth = 500) +
         theme_minimal()
     ),
     "130" = list(
-      ggplot(datasets::iris, aes(Sepal.Length, fill = Species)) +
+      ggplot(datasets::iris, aes(.data$Sepal.Length, fill = .data$Species)) +
         geom_histogram(binwidth = 0.5)  +
         theme_minimal()
     ),
     "131" = list(
-      ggplot(ggplot2::diamonds, aes(price, fill = color)) +
+      ggplot(ggplot2::diamonds, aes(.data$price, fill = .data$color)) +
         geom_histogram()  +
         theme_minimal()
     ),
     "140" = list(
       ggplot(data.frame(year = 1875:1972,
-                        level = as.vector(datasets::LakeHuron)), aes(year)) +
-        geom_ribbon(aes(ymin=0, ymax=level))  +
+                        level = as.vector(datasets::LakeHuron)), aes(.data$year)) +
+        geom_ribbon(aes(ymin=0, ymax=.data$level))  +
         theme_minimal()
     ),
     "141" = list(
       ggplot(data.frame(year = 1875:1972,
-                        level = as.vector(datasets::LakeHuron)), aes(year)) +
-        geom_ribbon(aes(ymin = level - 1, ymax = level + 1), fill = "grey70")   +
+                        level = as.vector(datasets::LakeHuron)), aes(.data$year)) +
+        geom_ribbon(aes(ymin = .data$level - 1, ymax = .data$level + 1), fill = "grey70")   +
         theme_minimal()
     ),
     "150" = list(
-      ggplot(ggplot2::faithfuld, aes(waiting, eruptions)) +
-        geom_raster(aes(fill = density))  +
+      ggplot(ggplot2::faithfuld, aes(.data$waiting, .data$eruptions)) +
+        geom_raster(aes(fill = .data$density))  +
         theme_minimal()
     ),
     "151" = list(
-      ggplot(ggplot2::faithfuld, aes(waiting, eruptions)) +
-        geom_raster(aes(fill = density), interpolate = TRUE)   +
+      ggplot(ggplot2::faithfuld, aes(.data$waiting, .data$eruptions)) +
+        geom_raster(aes(fill = .data$density), interpolate = TRUE)   +
         theme_minimal()
     ),
     "160" = list(
@@ -321,8 +322,8 @@ random_ggplot <- function(type = c("random", "point", "bar",
         y = rep(c(1, 2), each = 5),
         z = factor(rep(1:5, each = 2)),
         w = rep(diff(c(0, 4, 6, 8, 10, 14)), 2)
-      ), aes(x, y)) +
-        geom_tile(aes(fill = z), colour = "grey50")  +
+      ), aes(.data$x, .data$y)) +
+        geom_tile(aes(fill = .data$z), colour = "grey50")  +
         theme_minimal()
     ),
     "161" = list(
@@ -331,23 +332,23 @@ random_ggplot <- function(type = c("random", "point", "bar",
         y = rep(c(1, 2), each = 5),
         z = factor(rep(1:5, each = 2)),
         w = rep(diff(c(0, 4, 6, 8, 10, 14)), 2)
-      ), aes(x, y, width = w)) +
-        geom_tile(aes(fill = z), colour = "grey50")  +
+      ), aes(.data$x, .data$y, width = .data$w)) +
+        geom_tile(aes(fill = .data$z), colour = "grey50")  +
         theme_minimal()
     ),
     "170" = list(
-      ggplot(datasets::mtcars, aes(factor(cyl), mpg)) +
+      ggplot(datasets::mtcars, aes(factor(.data$cyl), .data$mpg)) +
         geom_violin() +
         theme_minimal()
     ),
     "171" = list(
-      ggplot(datasets::iris, aes(Species, Sepal.Length)) +
+      ggplot(datasets::iris, aes(.data$Species, .data$Sepal.Length)) +
         geom_violin() +
         theme_minimal()
     ),
     "180" = list(
       ggplot(ggplot2::economics) +
-        aes(date, unemploy) +
+        aes(.data$date, .data$unemploy) +
         geom_line() +
         labs(x = "date", y = "unemployment") +
         theme_minimal()
@@ -363,14 +364,14 @@ random_ggplot <- function(type = c("random", "point", "bar",
           passengers = as.numeric(datasets::AirPassengers)
         )
       ) +
-        aes(date, passengers) +
+        aes(.data$date, .data$passengers) +
         geom_line() +
         geom_point(size = 0.8) +
         theme_minimal()
     ),
     "182" = list(
       ggplot(ggplot2::economics) +
-        aes(date, psavert) +
+        aes(.data$date, .data$psavert) +
         geom_area(fill = "#440154FF", alpha = 0.7) +
         labs(x = "date", y = "personal savings rate") +
         theme_minimal()

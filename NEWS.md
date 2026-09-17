@@ -1,5 +1,7 @@
 # shinipsum 0.1.1.9000
 
+* `random_ggplot("bar")` gains an `n_bars` argument to draw an exact number
+  of bars. It is only valid with `type = "bar"` and errors otherwise (#5).
 * New `random_mock()`: sketches the zoning of a Shiny UI as a row of bordered,
   labelled bootstrap columns, returned as a `htmltools::tagList()` (#1).
 * `random_text()` gains a `var` argument: each integer value returns a
